@@ -294,12 +294,28 @@ I am currently open to freelance, remote, internship, and contract opportunities
           <div>
             <p class="text-lg md:text-xl font-semibold text-white/90">
               Add Your Work Image Here
-            </p>
-            <p class="text-sm text-white/70 mt-2">
-              Excel • Word • PowerPoint • Dashboard
-            </p>
-          </div>
-        </div>
+          <div class="mt-6 bg-white/10 border border-white/20 rounded-[20px] h-[190px] sm:h-[230px] md:h-[260px] overflow-hidden relative">
+
+  <div id="workSlider" class="flex h-full overflow-x-auto scroll-smooth snap-x snap-mandatory">
+
+    <img src="./Work-1.jpg" alt="Work Sample 1" class="min-w-full h-full object-contain snap-center bg-white/5">
+    <img src="./Work-2.jpg" alt="Work Sample 2" class="min-w-full h-full object-contain snap-center bg-white/5">
+    <img src="./Work-3.jpg" alt="Work Sample 3" class="min-w-full h-full object-contain snap-center bg-white/5">
+    <img src="./Work-4.jpg" alt="Work Sample 4" class="min-w-full h-full object-contain snap-center bg-white/5">
+    <img src="./Work-5.jpg" alt="Work Sample 5" class="min-w-full h-full object-contain snap-center bg-white/5">
+    <img src="./Work-6.jpg" alt="Work Sample 6" class="min-w-full h-full object-contain snap-center bg-white/5">
+
+  </div>
+
+  <button onclick="slideWork(-1)" class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 text-[#272b70] items-center justify-center font-bold shadow">
+    ‹
+  </button>
+
+  <button onclick="slideWork(1)" class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 text-[#272b70] items-center justify-center font-bold shadow">
+    ›
+  </button>
+
+</div>
 
         <!-- Bottom Small Boxes -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
@@ -959,4 +975,13 @@ Request Similar Solution
        class="w-14 h-14 rounded-full shadow-lg">
 </a>
 </a>
+   <script>
+  function slideWork(direction) {
+    const slider = document.getElementById("workSlider");
+    slider.scrollBy({
+      left: direction * slider.clientWidth,
+      behavior: "smooth"
+    });
+  }
+</script>
 </body></html>
