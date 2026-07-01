@@ -296,11 +296,12 @@ I am currently open to freelance, remote, internship, and contract opportunities
          <div class="mt-6 rounded-[28px] border border-white/20 bg-white/10 p-4 md:p-5">
   <div class="relative w-full h-[220px] sm:h-[280px] md:h-[340px] overflow-hidden rounded-[24px] bg-white/5">
     <img 
-      id="autoWorkImage"
-      src="./Work-1.jpg"
-      alt="Work Sample"
-      class="w-full h-full object-cover transition-opacity duration-500 opacity-100"
-    >
+    <img 
+  id="autoWorkImage"
+  src="./Work-1.jpg"
+  alt="Work Sample"
+  class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100"
+>
   </div>
 </div>
 </section>
@@ -1148,7 +1149,7 @@ I am currently open to freelance, remote, internship, and contract opportunities
     });
   }
 </script>
-   <script>
+<script>
   const autoWorkImages = [
     "./Work-1.jpg",
     "./Work-2.jpg",
@@ -1161,6 +1162,11 @@ I am currently open to freelance, remote, internship, and contract opportunities
   let autoWorkIndex = 0;
   const autoWorkImage = document.getElementById("autoWorkImage");
 
+  autoWorkImages.forEach(function(src) {
+    const img = new Image();
+    img.src = src;
+  });
+
   if (autoWorkImage) {
     setInterval(function () {
       autoWorkImage.style.opacity = "0";
@@ -1169,8 +1175,8 @@ I am currently open to freelance, remote, internship, and contract opportunities
         autoWorkIndex = (autoWorkIndex + 1) % autoWorkImages.length;
         autoWorkImage.src = autoWorkImages[autoWorkIndex];
         autoWorkImage.style.opacity = "1";
-      }, 300);
-    }, 2500);
+      }, 1000);
+    }, 2000);
   }
 </script>
 </body></html>
