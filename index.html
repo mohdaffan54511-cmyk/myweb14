@@ -153,147 +153,8 @@
   animation: fadeUp 0.9s ease-out both;
 }
 
-   /* ================================
-   GOOGLE + MICROSOFT TOOLS MARQUEE
-================================ */
-
-.tools-marquee-section {
-  padding: 58px 0;
-  background: #f7f9fb;
-  overflow: hidden;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.tools-marquee-heading {
-  text-align: center;
-  padding: 0 20px;
-  margin-bottom: 34px;
-}
-
-.tools-marquee-heading span {
-  display: block;
-  margin-bottom: 8px;
-  color: #2563eb;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-}
-
-.tools-marquee-heading h2 {
-  margin: 0;
-  color: #111827;
-  font-size: clamp(25px, 4vw, 34px);
-  font-weight: 700;
-}
-
-.tools-marquee {
-  width: 100%;
-  overflow: hidden;
-  margin: 16px 0;
-  position: relative;
-}
-
-.tools-marquee::before,
-.tools-marquee::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 70px;
-  z-index: 4;
-  pointer-events: none;
-}
-
-.tools-marquee::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    #f7f9fb,
-    transparent
-  );
-}
-
-.tools-marquee::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    #f7f9fb,
-    transparent
-  );
-}
-
-.tools-track {
-  display: flex;
-  width: max-content;
-  gap: 18px;
-  padding: 5px 9px;
-  will-change: transform;
-}
-
-.tool-card {
-  width: 145px;
-  height: 118px;
-  flex: 0 0 145px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 18px;
-
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
-
-  box-shadow:
-    0 8px 25px rgba(15, 23, 42, 0.06);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.tool-card:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 16px 35px rgba(37, 99, 235, 0.13);
-}
-
-.tool-card img {
-  width: 55px;
-  height: 55px;
-  object-fit: contain;
-}
-
-.tool-card span {
-  margin-top: 10px;
-  color: #374151;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-/* Row 1: Right → Left */
-
-.tools-track-left {
-  animation: toolsScrollLeft 28s linear infinite;
-}
-
-/* Row 2: Left → Right */
-
 .tools-track-right {
   animation: toolsScrollRight 34s linear infinite;
-}
-
-@keyframes toolsScrollLeft {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 @keyframes toolsScrollRight {
@@ -305,73 +166,6 @@
     transform: translateX(0);
   }
 }
-
-/* Pause when user hovers */
-
-.tools-marquee:hover .tools-track {
-  animation-play-state: paused;
-}
-
-/* Mobile */
-
-@media (max-width: 700px) {
-  .tools-marquee-section {
-    padding: 42px 0;
-  }
-
-  .tools-marquee-heading {
-    margin-bottom: 24px;
-  }
-
-  .tool-card {
-    width: 110px;
-    height: 96px;
-    flex-basis: 110px;
-    padding: 14px;
-    border-radius: 17px;
-  }
-
-  .tool-card img {
-    width: 44px;
-    height: 44px;
-  }
-
-  .tool-card span {
-    margin-top: 7px;
-    font-size: 10px;
-  }
-
-  .tools-track {
-    gap: 12px;
-  }
-
-  .tools-marquee::before,
-  .tools-marquee::after {
-    width: 30px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tools-track-left,
-  .tools-track-right {
-    animation: none;
-  }
-}
-   .fade-up {
-  animation: fadeUp 0.9s ease-out both;
-}
-
-
-/* YAHAN NEW MARQUEE CSS PASTE KARO */
-
-.tools-marquee {
-  width: 100%;
-  overflow: hidden;
-  margin: 16px 0;
-}
-
-/* baaki marquee CSS... */
-
 
     </style>
 </head>
@@ -458,162 +252,124 @@ I am currently open to freelance, remote, internship, and contract opportunities
 </div>
 </div>
 </section>
-<!-- Tools Marquee Section -->
+<!-- Single Line Tools Marquee -->
 <section class="tools-marquee-section">
+
   <div class="tools-marquee-heading">
     <span>TOOLS I WORK WITH</span>
     <h2>Microsoft 365 & Google Workspace</h2>
   </div>
 
-  <!-- Google Row -->
   <div class="tools-marquee">
+
     <div class="tools-track tools-track-left">
 
+      <!-- First Set -->
+
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:gmail-icon.svg" alt="Gmail">
-        <span>Gmail</span>
+        <img src="https://img.icons8.com/color/96/gmail-new.png" alt="Gmail">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:google-calendar.svg" alt="Google Calendar">
-        <span>Calendar</span>
+        <img src="https://img.icons8.com/color/96/google-calendar--v2.png" alt="Google Calendar">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:google-drive.svg" alt="Google Drive">
-        <span>Drive</span>
+        <img src="https://img.icons8.com/color/96/google-drive--v2.png" alt="Google Drive">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:google-docs.svg" alt="Google Docs">
-        <span>Google Docs</span>
+        <img src="https://img.icons8.com/color/96/google-docs.png" alt="Google Docs">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:google-meet.svg" alt="Google Meet">
-        <span>Google Meet</span>
-      </div>
-
-      <!-- Duplicate for smooth infinite marquee -->
-
-      <div class="tool-card">
-        <img src="https://api.iconify.design/logos:gmail-icon.svg" alt="Gmail">
-        <span>Gmail</span>
+        <img src="https://img.icons8.com/color/96/google-meet.png" alt="Google Meet">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:google-calendar.svg" alt="Google Calendar">
-        <span>Calendar</span>
+        <img src="https://img.icons8.com/color/96/microsoft.png" alt="Microsoft">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:google-drive.svg" alt="Google Drive">
-        <span>Drive</span>
+        <img src="https://img.icons8.com/color/96/microsoft-word-2019--v2.png" alt="Word">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:google-docs.svg" alt="Google Docs">
-        <span>Google Docs</span>
+        <img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:google-meet.svg" alt="Google Meet">
-        <span>Google Meet</span>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Microsoft Row -->
-  <div class="tools-marquee">
-    <div class="tools-track tools-track-right">
-
-      <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-icon.svg" alt="Microsoft">
-        <span>Microsoft</span>
+        <img src="https://img.icons8.com/color/96/microsoft-teams-2019.png" alt="Teams">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-copilot.svg" alt="Microsoft Copilot">
-        <span>Copilot</span>
+        <img src="https://img.icons8.com/color/96/microsoft-powerpoint-2019.png" alt="PowerPoint">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-word.svg" alt="Microsoft Word">
-        <span>Word</span>
+        <img src="https://img.icons8.com/color/96/microsoft-onenote-2019.png" alt="OneNote">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-excel.svg" alt="Microsoft Excel">
-        <span>Excel</span>
+        <img src="https://img.icons8.com/color/96/microsoft-outlook-2019.png" alt="Outlook">
+      </div>
+
+
+      <!-- Duplicate Set for smooth continuous movement -->
+
+      <div class="tool-card">
+        <img src="https://img.icons8.com/color/96/gmail-new.png" alt="Gmail">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-teams.svg" alt="Microsoft Teams">
-        <span>Teams</span>
+        <img src="https://img.icons8.com/color/96/google-calendar--v2.png" alt="Google Calendar">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-powerpoint.svg" alt="Microsoft PowerPoint">
-        <span>PowerPoint</span>
+        <img src="https://img.icons8.com/color/96/google-drive--v2.png" alt="Google Drive">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-onenote.svg" alt="Microsoft OneNote">
-        <span>OneNote</span>
+        <img src="https://img.icons8.com/color/96/google-docs.png" alt="Google Docs">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-outlook.svg" alt="Microsoft Outlook">
-        <span>Outlook</span>
-      </div>
-
-      <!-- Duplicate -->
-
-      <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-icon.svg" alt="Microsoft">
-        <span>Microsoft</span>
+        <img src="https://img.icons8.com/color/96/google-meet.png" alt="Google Meet">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-copilot.svg" alt="Microsoft Copilot">
-        <span>Copilot</span>
+        <img src="https://img.icons8.com/color/96/microsoft.png" alt="Microsoft">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-word.svg" alt="Microsoft Word">
-        <span>Word</span>
+        <img src="https://img.icons8.com/color/96/microsoft-word-2019--v2.png" alt="Word">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-excel.svg" alt="Microsoft Excel">
-        <span>Excel</span>
+        <img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-teams.svg" alt="Microsoft Teams">
-        <span>Teams</span>
+        <img src="https://img.icons8.com/color/96/microsoft-teams-2019.png" alt="Teams">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-powerpoint.svg" alt="Microsoft PowerPoint">
-        <span>PowerPoint</span>
+        <img src="https://img.icons8.com/color/96/microsoft-powerpoint-2019.png" alt="PowerPoint">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-onenote.svg" alt="Microsoft OneNote">
-        <span>OneNote</span>
+        <img src="https://img.icons8.com/color/96/microsoft-onenote-2019.png" alt="OneNote">
       </div>
 
       <div class="tool-card">
-        <img src="https://api.iconify.design/logos:microsoft-outlook.svg" alt="Microsoft Outlook">
-        <span>Outlook</span>
+        <img src="https://img.icons8.com/color/96/microsoft-outlook-2019.png" alt="Outlook">
       </div>
 
     </div>
+
   </div>
+
 </section>
-<!-- Stats Section -->
 <!-- Proven Results Section -->
 <section id="results" class="bg-[#EEF2FF] py-12 md:py-16 border-b border-outline-variant">
   <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
@@ -1571,4 +1327,3 @@ I am currently open to freelance, remote, internship, and contract opportunities
     }, 2000);
   }
 </script>
-</body></html>
