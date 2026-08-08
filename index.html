@@ -152,6 +152,211 @@
 .fade-up {
   animation: fadeUp 0.9s ease-out both;
 }
+
+   /* ================================
+   GOOGLE + MICROSOFT TOOLS MARQUEE
+================================ */
+
+.tools-marquee-section {
+  padding: 58px 0;
+  background: #f7f9fb;
+  overflow: hidden;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tools-marquee-heading {
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 34px;
+}
+
+.tools-marquee-heading span {
+  display: block;
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.tools-marquee-heading h2 {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 700;
+}
+
+.tools-marquee {
+  width: 100%;
+  overflow: hidden;
+  margin: 16px 0;
+  position: relative;
+}
+
+.tools-marquee::before,
+.tools-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 70px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.tools-marquee::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #f7f9fb,
+    transparent
+  );
+}
+
+.tools-marquee::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #f7f9fb,
+    transparent
+  );
+}
+
+.tools-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  padding: 5px 9px;
+  will-change: transform;
+}
+
+.tool-card {
+  width: 145px;
+  height: 118px;
+  flex: 0 0 145px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 16px 35px rgba(37, 99, 235, 0.13);
+}
+
+.tool-card img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.tool-card span {
+  margin-top: 10px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Row 1: Right → Left */
+
+.tools-track-left {
+  animation: toolsScrollLeft 28s linear infinite;
+}
+
+/* Row 2: Left → Right */
+
+.tools-track-right {
+  animation: toolsScrollRight 34s linear infinite;
+}
+
+@keyframes toolsScrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes toolsScrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Pause when user hovers */
+
+.tools-marquee:hover .tools-track {
+  animation-play-state: paused;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .tools-marquee-section {
+    padding: 42px 0;
+  }
+
+  .tools-marquee-heading {
+    margin-bottom: 24px;
+  }
+
+  .tool-card {
+    width: 110px;
+    height: 96px;
+    flex-basis: 110px;
+    padding: 14px;
+    border-radius: 17px;
+  }
+
+  .tool-card img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tool-card span {
+    margin-top: 7px;
+    font-size: 10px;
+  }
+
+  .tools-track {
+    gap: 12px;
+  }
+
+  .tools-marquee::before,
+  .tools-marquee::after {
+    width: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-track-left,
+  .tools-track-right {
+    animation: none;
+  }
+}
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
