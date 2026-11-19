@@ -122,6 +122,7 @@
           font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
         
+        /* Modern Startup Heading Font */
         h1, h2, h3, h4, h5, h6, 
         .font-heading,
         .font-display-lg, 
@@ -146,7 +147,7 @@
         }
         @keyframes softFloat {
           0% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
+          50% { transform: translateY(-10px); }
           100% { transform: translateY(0px); }
         }
 
@@ -170,7 +171,7 @@
         }
 
         /* =========================================
-           WHITE-BEZEL CURVED VIDEO FRAME
+           WHITE-BEZEL CURVED VIDEO FRAME (MOBILE & DESKTOP)
            ========================================= */
         .video-showcase-container {
           width: 100%;
@@ -228,7 +229,7 @@
            SINGLE-LINE GOOGLE + MICROSOFT TOOLS MARQUEE
            ========================================= */
         .tools-marquee-section {
-          padding: 52px 0;
+          padding: 58px 0;
           background: #f7f9fb;
           overflow: hidden;
           border-top: 1px solid #e5e7eb;
@@ -238,7 +239,7 @@
         .tools-marquee-heading {
           text-align: center;
           padding: 0 20px;
-          margin-bottom: 30px;
+          margin-bottom: 34px;
         }
 
         .tools-marquee-heading span {
@@ -253,7 +254,7 @@
         .tools-marquee-heading h2 {
           margin: 0;
           color: #111827;
-          font-size: clamp(24px, 4vw, 32px);
+          font-size: clamp(25px, 4vw, 34px);
           font-weight: 700;
         }
 
@@ -261,7 +262,7 @@
           position: relative;
           width: 100%;
           overflow: hidden;
-          margin: 14px 0;
+          margin: 16px 0;
         }
 
         .tools-marquee::before,
@@ -297,7 +298,7 @@
 
         .tool-card {
           width: 145px;
-          height: 114px;
+          height: 118px;
           flex: 0 0 145px;
           display: flex;
           flex-direction: column;
@@ -317,8 +318,8 @@
         }
 
         .tool-card img {
-          width: 54px;
-          height: 54px;
+          width: 58px;
+          height: 58px;
           display: block;
           object-fit: contain;
         }
@@ -344,18 +345,22 @@
         }
 
         @media (max-width: 700px) {
-          .tools-marquee-section { padding: 40px 0; }
-          .tools-marquee-heading { margin-bottom: 22px; }
-          .tools-marquee-heading h2 { font-size: 22px; }
+          .tools-marquee-section { padding: 42px 0; }
+          .tools-marquee-heading { margin-bottom: 24px; }
+          .tools-marquee-heading h2 { font-size: 24px; }
           .tools-marquee::before, .tools-marquee::after { width: 30px; }
           .tools-track { gap: 12px; padding: 4px 6px; }
           .tool-card { width: 110px; height: 96px; flex-basis: 110px; padding: 14px; border-radius: 17px; }
-          .tool-card img { width: 44px; height: 44px; }
+          .tool-card img { width: 48px; height: 48px; }
           .tool-card span { margin-top: 7px; font-size: 10px; }
           @keyframes toolsScrollLeft {
             from { transform: translateX(0); }
             to { transform: translateX(calc(-50% - 6px)); }
           }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .tools-track-left { animation: none; }
         }
 
         /* =========================================
@@ -367,8 +372,9 @@
             overflow: hidden;
           }
           #pricing h2 {
-            font-size: 32px !important;
-            line-height: 1.15 !important;
+            font-size: 34px !important;
+            line-height: 1.08 !important;
+            letter-spacing: -0.03em;
           }
           #pricing p {
             line-height: 1.55;
@@ -377,13 +383,13 @@
             display: grid !important;
             grid-template-columns: repeat(3, 1fr) !important;
             width: 100%;
-            min-height: 60px;
+            min-height: 64px;
             overflow: hidden;
             border-radius: 18px;
           }
           #pricing .grid.grid-cols-3 button {
             min-width: 0;
-            padding: 14px 4px !important;
+            padding: 15px 5px !important;
             font-size: 13px !important;
             line-height: 1.2;
             white-space: nowrap;
@@ -398,10 +404,16 @@
             display: block !important;
           }
           #pricing .pricing-plan h3 {
-            font-size: 24px !important;
+            font-size: 25px !important;
+            line-height: 1.2;
           }
           #pricing .pricing-plan .text-4xl {
-            font-size: 36px !important;
+            font-size: 38px !important;
+          }
+          #pricing .pricing-plan a,
+          #pricing .pricing-plan button {
+            max-width: 100%;
+            box-sizing: border-box;
           }
         }
 
@@ -415,20 +427,20 @@
    <body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
       <header class="bg-surface-container-lowest dark:bg-surface-container-highest fixed top-0 w-full z-50 border-b border-outline-variant dark:border-outline shadow-sm transition-all duration-300" id="main-nav">
          <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4">
-            <a class="flex items-center gap-2.5 group" href="#">
-               <img alt="Data Specialist Logo" class="h-9 w-9 object-contain" src="./logo11.png">
-               <span class="text-lg font-bold text-primary group-hover:opacity-85 transition-opacity">Data Specialist</span>
+            <a class="flex items-center gap-2 group" href="#">
+               <img alt="Data Specialist Logo" class="h-8 w-8 object-contain" src="./logo11.png">
+               <span class="text-base font-semibold text-headline-sm font-bold text-primary dark:text-primary-fixed group-hover:opacity-80 transition-opacity">Data Specialist</span>
             </a>
             <nav class="hidden md:flex items-center gap-8">
-               <a class="text-[#111827] hover:text-primary transition-colors text-base font-semibold" href="#services">Services</a>
-               <a class="text-[#111827] hover:text-primary transition-colors text-base font-semibold" href="#about">About</a>
-               <a class="text-[#111827] hover:text-primary transition-colors text-base font-semibold" href="#portfolio">Portfolio</a>
-               <a class="text-[#111827] hover:text-primary transition-colors text-base font-semibold" href="#certifications">Certificates</a>
-               <a class="text-[#111827] hover:text-primary transition-colors text-base font-semibold" href="#testimonials">Testimonials</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#services">Services</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#about">About</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#portfolio">Portfolio</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#certifications">Certificates</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#testimonials">Testimonials</a>
             </nav>
             <div class="hidden md:flex items-center gap-4">
-               <a class="px-4 py-2 text-primary font-semibold border border-primary rounded-lg hover:bg-surface-container-low transition-colors" href="#contact">Contact</a>
-               <a class="px-4 py-2 bg-primary text-on-primary font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity" href="https://calendly.com/mohdaffan54511/30min" target="_blank">Book A Call</a>
+               <a class="px-3 py-1.5 text-primary font-body-md text-body-md font-semibold border border-primary rounded-lg hover:bg-surface-container-low transition-colors" href="#contact">Contact</a>
+               <a class="px-3 py-1.5 bg-primary text-on-primary font-body-md text-body-md font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity" href="https://calendly.com/mohdaffan54511/30min" target="_blank">Book A Call</a>
             </div>
             <button aria-label="Toggle menu" class="md:hidden text-on-surface-variant p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                <svg class="w-8 h-8 text-[#111827]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -437,74 +449,61 @@
             </button>
          </div>
          <div class="hidden md:hidden bg-surface-container-lowest border-t border-outline-variant px-margin-mobile py-4 space-y-4" id="mobile-menu">
-            <a class="block text-on-surface-variant hover:text-primary py-2 font-medium" href="#services">Services</a>
-            <a class="block text-on-surface-variant hover:text-primary py-2 font-medium" href="#about">About</a>
-            <a class="block text-on-surface-variant hover:text-primary py-2 font-medium" href="#portfolio">Portfolio</a>
-            <a class="block text-on-surface-variant hover:text-primary py-2 font-medium" href="#certifications">Certificates</a>
-            <a class="block text-on-surface-variant hover:text-primary py-2 font-medium" href="#testimonials">Testimonials</a>
+            <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#services">Services</a>
+            <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#about">About</a>
+            <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#portfolio">Portfolio</a>
+            <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#certifications">Certificates</a>
+            <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#testimonials">Testimonials</a>
             <div class="flex flex-col gap-2 pt-4 border-t border-outline-variant">
-               <a class="text-center px-4 py-2 text-primary border border-primary rounded-lg font-semibold" href="#contact">Contact</a>
-               <a class="text-center px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold" href="https://calendly.com/mohdaffan54511/30min" target="_blank">Book A Call</a>
+               <a class="text-center px-3 py-1.5 text-primary border border-primary rounded-lg font-semibold" href="#contact">Contact</a>
+               <a class="text-center px-3 py-1.5 bg-primary text-on-primary rounded-lg font-semibold" href="https://calendly.com/mohdaffan54511/30min" target="_blank">Book A Call</a>
             </div>
          </div>
       </header>
 
       <main class="pt-[80px]">
-         <!-- Hero Section -->
-         <section id="about" class="relative bg-[#CCD5FF] scroll-mt-24 py-16 md:py-28 overflow-hidden border-b border-surface-variant">
+         <section id="about" class="relative bg-[#CCD5FF] scroll-mt-24 py-20 md:py-32 overflow-hidden border-b border-surface-variant">
             <div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 rounded-full bg-primary-fixed-dim/20 blur-3xl pointer-events-none"></div>
             <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
             <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-               <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                  <div class="space-y-6 max-w-2xl">
-                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/80 backdrop-blur-sm border border-outline-variant rounded-full shadow-xs">
-                        <img src="./icon.jpg" alt="Service Icon" class="w-4 h-4 object-contain rounded-full">
-                        <span class="font-label-caps text-label-caps text-primary font-semibold">MS Office & Data Analytics Specialist</span>
+               <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+                  <div class="space-y-8 max-w-2xl">
+                     <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low border border-outline-variant rounded-full">
+                        <img src="./icon.jpg" alt="Service Icon" class="w-4 h-4 object-contain">
+                        <span class="font-label-caps text-label-caps text-on-surface-variant font-medium">Data Specialist Freelance Services</span>
                      </div>
-                     <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface tracking-tight">
-                        <span class="text-primary">Hey, I am Affan</span> — Professional MS Office & Data Solutions Expert
-                     </h1>
+                     <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface tracking-tight"><span class="text-primary">Hey, I am Affan</span>, Professional MS Office Specialist & Data Solutions Expert</h1>
                      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                        I help businesses, agencies, and professionals turn messy spreadsheets into automated, presentation-ready Excel dashboards and reports. Save hours every week and eliminate manual calculation errors.
+                        I help small businesses, startups, and professionals clean Excel data, automate reports,
+                        create dashboards, and format Word/PowerPoint documents professionally.
+                        My focus is on saving your time, reducing manual errors, and delivering accurate business-ready files.
+                        I am currently open to freelance, remote, internship, and contract opportunities.
                      </p>
-                     <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <a class="inline-flex justify-center items-center px-7 py-3.5 bg-primary text-on-primary text-base font-semibold rounded-xl shadow-md hover:bg-primary-container transition-all duration-200" href="#contact">
+                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a class="inline-flex justify-center items-center px-6 py-3 bg-primary text-on-primary text-body-lg font-semibold rounded-lg shadow-sm hover:bg-primary-container transition-colors duration-200" href="#contact">
                            Get a Free Consultation
                         </a>
-                        <a class="inline-flex justify-center items-center px-7 py-3.5 bg-white text-primary text-base font-semibold border border-primary/30 rounded-xl hover:bg-white/80 transition-all duration-200 shadow-xs" href="#contact">
+                        <a class="inline-flex justify-center items-center px-6 py-3 bg-transparent text-primary text-body-lg font-semibold border border-primary rounded-lg hover:bg-primary-fixed/30 transition-colors duration-200" href="#contact">
                            Send Your File for Review
                         </a>
                      </div>
-                     <div class="pt-4 flex items-center gap-4 text-sm text-on-surface-variant">
+                     <div class="pt-6 flex items-center gap-4 text-sm text-on-surface-variant">
                         <div class="flex -space-x-2">
-                           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQtcgGiutOwJdJnivoNlekuDSn1vjkqOnc1_eRukMvA3zvEVUcaSNTPfoZPpV13yKoVMd3oekyBaLMYUVphzJJ6hVDVziMCy5o9Asi-eqNf7FS2MdkTpkqzn8IzQv6algR8sMadYgmXCXUnzS--1TTC9TQK9gmMAuOzzdD_nGLForuleMYmo97rwej6v7bSU_KjB4elSwlyNkxigmMF4xCiT0BrBm-v3app-xoBtDG-_TTeXuaWvWKizwxbhNfBTKe1tZ92GWEL5Tr" alt="Client" class="w-8 h-8 rounded-full border-2 border-white z-30 object-cover shadow-xs">
-                           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZiKpMvBG9Q321nkDfinCIHiGugEUH7AFpXuULN03Co_awJyjvDFsCXCZzCU-jMDKyFGg-SWv3t4Zj6havLc9KRPqz8np93CxYODjT1GHKUqw8HLY9ke3MJ3GYsRNOXcJEAF7zqmrnj6AHE66bfBGUnXanMHUiXvlNfHGZ-mVg0lc5P_e53tZ3anfmsXCKfMaf4T-YmMtYQR92HtXN-V9xkCw3pn9s09YpajxHvMsq1bRGk3QOG1Ix6ZNCG-rQ3KFbHeAu2Tm_Ti3d" alt="Client" class="w-8 h-8 rounded-full border-2 border-white z-20 object-cover shadow-xs">
-                           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQYCCjFzEiDdNoTKKzAzfu7ENJ0WFY7xSG_oUuprqCjLtqeU9x_Q5NOuKmHKS_Jg6P5RSze7JuQs3_T1M0JTiWBkWYl4WQojL8kKLK6jRdHHFZghK5x9moQWyfdFC93zWCMRbf2gvC_tqqy4ArLySFKOMaDxv61zEUINpHWpsaxxiB_cmObKWDaTGkSYhVavNQm2K4oQ401uCedRWWus6E8th2MOFdbeFuolVf9yLA9xgZQx7155BezQKbu6SIaxaInoQkfioiwUJy" alt="Client" class="w-8 h-8 rounded-full border-2 border-white z-10 object-cover shadow-xs">
+                           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQtcgGiutOwJdJnivoNlekuDSn1vjkqOnc1_eRukMvA3zvEVUcaSNTPfoZPpV13yKoVMd3oekyBaLMYUVphzJJ6hVDVziMCy5o9Asi-eqNf7FS2MdkTpkqzn8IzQv6algR8sMadYgmXCXUnzS--1TTC9TQK9gmMAuOzzdD_nGLForuleMYmo97rwej6v7bSU_KjB4elSwlyNkxigmMF4xCiT0BrBm-v3app-xoBtDG-_TTeXuaWvWKizwxbhNfBTKe1tZ92GWEL5Tr" alt="Client" class="w-8 h-8 rounded-full border-2 border-surface-bright z-30 object-cover">
+                           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZiKpMvBG9Q321nkDfinCIHiGugEUH7AFpXuULN03Co_awJyjvDFsCXCZzCU-jMDKyFGg-SWv3t4Zj6havLc9KRPqz8np93CxYODjT1GHKUqw8HLY9ke3MJ3GYsRNOXcJEAF7zqmrnj6AHE66bfBGUnXanMHUiXvlNfHGZ-mVg0lc5P_e53tZ3anfmsXCKfMaf4T-YmMtYQR92HtXN-V9xkCw3pn9s09YpajxHvMsq1bRGk3QOG1Ix6ZNCG-rQ3KFbHeAu2Tm_Ti3d" alt="Client" class="w-8 h-8 rounded-full border-2 border-surface-bright z-20 object-cover">
+                           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQYCCjFzEiDdNoTKKzAzfu7ENJ0WFY7xSG_oUuprqCjLtqeU9x_Q5NOuKmHKS_Jg6P5RSze7JuQs3_T1M0JTiWBkWYl4WQojL8kKLK6jRdHHFZghK5x9moQWyfdFC93zWCMRbf2gvC_tqqy4ArLySFKOMaDxv61zEUINpHWpsaxxiB_cmObKWDaTGkSYhVavNQm2K4oQ401uCedRWWus6E8th2MOFdbeFuolVf9yLA9xgZQx7155BezQKbu6SIaxaInoQkfioiwUJy" alt="Client" class="w-8 h-8 rounded-full border-2 border-surface-bright z-10 object-cover">
                         </div>
-                        <span class="font-medium text-slate-800">Trusted by 50+ businesses worldwide</span>
+                        <span class="font-body-md">Trusted by 50+ businesses worldwide</span>
                      </div>
                   </div>
-                  
-                  <div class="hidden lg:flex justify-center items-center relative">
-                     <div class="relative w-full max-w-[420px]">
-                        <div class="absolute -inset-2 bg-gradient-to-r from-primary to-blue-400 rounded-3xl blur-xl opacity-30 transform -rotate-2"></div>
-                        <div class="relative bg-white p-3 rounded-[32px] shadow-2xl border border-white">
-                           <img alt="Data Specialist Profile" class="rounded-[24px] w-full h-[460px] object-cover object-top" src="./affan111.jpeg">
-                           <div class="absolute -bottom-5 -left-5 bg-white py-3 px-5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
-                              <span class="flex h-3 w-3 relative">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                              </span>
-                              <span class="text-sm font-bold text-slate-800">Available for New Projects</span>
-                           </div>
-                        </div>
-                     </div>
+                  <div class="hidden lg:block relative group perspective-1000">
+                     <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-xl transform rotate-2 scale-105 transition-transform duration-500 group-hover:rotate-4"></div>
+                     <img alt="Data Specialist Profile" class="rounded-xl shadow-lg border border-outline-variant relative z-10 transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl w-full h-auto object-cover max-h-[500px] soft-float" src="./affan111.jpeg">
                   </div>
                </div>
             </div>
          </section>
          
-         <!-- Marquee Section -->
          <section class="tools-marquee-section">
             <div class="tools-marquee-heading">
                <span>TOOLS I WORK WITH</span>
@@ -549,70 +548,18 @@
                   <div class="tool-card"><img src="https://img.icons8.com/color/96/google-calendar--v2.png" alt="Google Calendar"></div>
                   <div class="tool-card"><img src="https://img.icons8.com/color/96/google-drive--v2.png" alt="Google Drive"></div>
                   <div class="tool-card"><img src="https://img.icons8.com/color/96/google-docs.png" alt="Google Docs"></div>
+                  <div class="tool-card"><img src="https://img.icons8.com/color/96/google-meet.png" alt="Google Meet"></div>
+                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft.png" alt="Microsoft"></div>
+                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-word-2019--v2.png" alt="Word"></div>
                   <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel"></div>
+                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-powerpoint-2019.png" alt="PowerPoint"></div>
+                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-onenote-2019.png" alt="OneNote"></div>
+                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-outlook-2019.png" alt="Outlook"></div>
                </div>
             </div>
          </section>
 
-         <!-- Dedicated Services Section (Fixes Navbar #services link) -->
-         <section id="services" class="py-16 md:py-24 bg-white border-b border-outline-variant">
-            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-               <div class="text-center mb-14 max-w-3xl mx-auto">
-                  <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Tailored Solutions</span>
-                  <h2 class="text-3xl md:text-5xl font-bold text-on-surface mb-4">
-                     Specialized MS Office & Data Services
-                  </h2>
-                  <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
-                     From high-level executive dashboards to raw data extraction, get your business files delivered with zero errors and boardroom precision.
-                  </p>
-               </div>
-               
-               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all">
-                     <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mb-5">
-                        📊
-                     </div>
-                     <h3 class="text-xl font-bold text-on-surface mb-2">Interactive Dashboards</h3>
-                     <p class="text-sm text-on-surface-variant leading-relaxed">
-                        Sales, revenue, and KPI trackers with dynamic slicers, filters, and automated visual charts.
-                     </p>
-                  </div>
-
-                  <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all">
-                     <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mb-5">
-                        ⚡
-                     </div>
-                     <h3 class="text-xl font-bold text-on-surface mb-2">Excel Automation & VBA</h3>
-                     <p class="text-sm text-on-surface-variant leading-relaxed">
-                        Eliminate hours of manual reporting with custom macros, XLOOKUP, advanced formulas, and Power Query.
-                     </p>
-                  </div>
-
-                  <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all">
-                     <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mb-5">
-                        🧹
-                     </div>
-                     <h3 class="text-xl font-bold text-on-surface mb-2">Data Cleaning & Prep</h3>
-                     <p class="text-sm text-on-surface-variant leading-relaxed">
-                        Deduplication, phone & address normalization, splitting messy tables, and PDF to Excel conversion.
-                     </p>
-                  </div>
-
-                  <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all">
-                     <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mb-5">
-                        📑
-                     </div>
-                     <h3 class="text-xl font-bold text-on-surface mb-2">Word & Presentation Decks</h3>
-                     <p class="text-sm text-on-surface-variant leading-relaxed">
-                        Polished corporate Word documents, structured investor presentations, and master brand templates.
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <!-- Results Section: White Bezel Video Frame -->
-         <section id="results" class="bg-[#EEF2FF] py-16 md:py-20 border-b border-outline-variant">
+         <section id="results" class="bg-[#EEF2FF] py-12 md:py-16 border-b border-outline-variant">
             <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                <div class="text-center mb-12">
                   <h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-3">
@@ -622,40 +569,40 @@
                      Delivering measurable efficiency, clarity, and professional business-ready solutions through Excel, Word, PowerPoint, and data automation.
                   </p>
                </div>
-               <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+               <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
                   
                   <!-- Left Side: Metrics Cards -->
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                     <div class="bg-white rounded-[20px] border border-outline-variant p-5 shadow-xs min-h-[140px] flex flex-col justify-center">
-                        <h3 class="text-3xl font-extrabold text-primary mb-1">50+</h3>
-                        <p class="text-base font-semibold text-on-surface mb-1">Hours Saved</p>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                     <div class="bg-white rounded-[22px] border border-outline-variant p-5 md:p-6 shadow-sm min-h-[150px] md:min-h-[165px] flex flex-col justify-center">
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">50+</h3>
+                        <p class="text-base md:text-lg font-semibold text-on-surface mb-2">Hours Saved</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
                            Manual data entry reduced through smart Excel automation and workflow cleanup.
                         </p>
                      </div>
-                     <div class="bg-white rounded-[20px] border border-outline-variant p-5 shadow-xs min-h-[140px] flex flex-col justify-center">
-                        <h3 class="text-3xl font-extrabold text-primary mb-1">74+</h3>
-                        <p class="text-base font-semibold text-on-surface mb-1">Reports Automated</p>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">
+                     <div class="bg-white rounded-[22px] border border-outline-variant p-5 md:p-6 shadow-sm min-h-[150px] md:min-h-[165px] flex flex-col justify-center">
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">74+</h3>
+                        <p class="text-base md:text-lg font-semibold text-on-surface mb-2">Reports Automated</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
                            Reporting tasks simplified with cleaner files, formulas, and repeatable templates.
                         </p>
                      </div>
-                     <div class="bg-white rounded-[20px] border border-outline-variant p-5 shadow-xs min-h-[140px] flex flex-col justify-center">
-                        <h3 class="text-3xl font-extrabold text-primary mb-1">100%</h3>
-                        <p class="text-base font-semibold text-on-surface mb-1">Data Accuracy</p>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">
+                     <div class="bg-white rounded-[22px] border border-outline-variant p-5 md:p-6 shadow-sm min-h-[150px] md:min-h-[165px] flex flex-col justify-center">
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">100%</h3>
+                        <p class="text-base md:text-lg font-semibold text-on-surface mb-2">Data Accuracy</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
                            Better validation, organized spreadsheets, and business-ready formatting.
                         </p>
                      </div>
-                     <div class="bg-white rounded-[20px] border border-outline-variant p-5 shadow-xs min-h-[140px] flex flex-col justify-center">
-                        <h3 class="text-3xl font-extrabold text-primary mb-1">24h</h3>
-                        <p class="text-base font-semibold text-on-surface mb-1">Fast Response</p>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">
+                     <div class="bg-white rounded-[22px] border border-outline-variant p-5 md:p-6 shadow-sm min-h-[150px] md:min-h-[165px] flex flex-col justify-center">
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">24h</h3>
+                        <p class="text-base md:text-lg font-semibold text-on-surface mb-2">Fast Response</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
                            Quick communication and smooth project handling from start to delivery.
                         </p>
                      </div>
-                     <div class="sm:col-span-2 bg-gradient-to-r from-primary to-[#4c5cff] text-white rounded-[20px] p-5 relative overflow-hidden shadow-sm">
-                        <h3 class="text-lg md:text-xl font-bold leading-tight max-w-xl">
+                     <div class="sm:col-span-2 bg-gradient-to-r from-primary to-[#4c5cff] text-white rounded-[24px] p-5 md:p-6 relative overflow-hidden">
+                        <h3 class="text-xl md:text-2xl font-bold leading-tight max-w-xl">
                            Your business gets clean files, faster workflows, and professional results <span class="text-yellow-300">from Day 1.</span>
                         </h3>
                      </div>
@@ -672,14 +619,63 @@
                            <source src="./your-work-video.mp4" type="video/mp4">
                            Your browser does not support the video tag.
                         </video>
+                        <!--
+                        <iframe 
+                           src="https://www.youtube-nocookie.com/embed/YOUR_ID_HERE?rel=0" 
+                           title="Work Walkthrough" 
+                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                           allowfullscreen>
+                        </iframe>
+                        -->
                      </div>
                   </div>
 
                </div>
             </div>
          </section>
+         
+         <section id="work-samples" class="py-20 bg-surface border-b border-outline-variant">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+               <div class="text-center mb-12">
+                  <h2 class="font-headline-md text-headline-md text-on-surface mb-4">
+                     My Work Samples
+                  </h2>
+                  <p class="font-body-lg text-body-lg text-on-surface-variant">
+                     Real Excel Dashboards & Data Solutions I Created
+                  </p>
+               </div>
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-5xl mx-auto justify-items-center">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm text-center">
+                     <img src="./11B.png" alt="Sales Dashboard" class="w-full aspect-video object-cover block">
+                     <div class="p-3">
+                        <h3 class="font-headline-sm mb-2">Sales Dashboard</h3>
+                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg font-semibold">
+                           View Sample
+                        </a>
+                     </div>
+                  </div>
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm text-center">
+                     <img src="cw-pdf-to-excel-100928235-orig.webp" alt="Inventory Management" class="w-full aspect-video object-cover">
+                     <div class="p-3">
+                        <h3 class="font-headline-sm mb-2">Inventory Management</h3>
+                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg font-semibold">
+                           View Sample
+                        </a>
+                     </div>
+                  </div>
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm text-center">
+                     <img src="c.png" alt="KPI Dashboard" class="w-full aspect-video object-cover">
+                     <div class="p-3">
+                        <h3 class="font-headline-sm mb-2">KPI Performance Dashboard</h3>
+                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg font-semibold">
+                           View Sample
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
 
-         <!-- How It Works Section -->
          <section id="how-it-works" class="bg-[#EEF2FF] py-14 md:py-20 border-b border-outline-variant">
             <div class="max-w-5xl mx-auto px-5 md:px-10">
                <div class="text-center mb-10">
@@ -690,129 +686,161 @@
                      Send me your messy Excel, Word, PowerPoint, or PDF file. I will clean it, organize it, and make it professional.
                   </p>
                </div>
-               <div class="space-y-4">
-                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#f3f4f6] rounded-[24px] md:rounded-[28px] px-5 py-6 md:p-7">
-                     <div class="w-[60px] md:w-24 shrink-0 text-3xl md:text-5xl font-extrabold italic text-[#0053db] leading-none">01</div>
+               <div class="space-y-5">
+                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#f3f4f6] rounded-[24px] md:rounded-[30px] px-5 py-7 md:p-8">
+                     <div class="w-[70px] md:w-28 shrink-0 text-4xl md:text-6xl font-extrabold italic text-[#0053db] leading-none">01</div>
                      <div class="text-left">
                         <h3 class="text-lg md:text-2xl font-extrabold text-[#111827] leading-tight mb-1">Send Your Messy File</h3>
-                        <p class="text-sm md:text-base text-[#374151] leading-relaxed">Share your Excel, Word, PowerPoint, PDF, or data file with clear requirements.</p>
+                        <p class="text-sm md:text-base text-[#374151] leading-snug md:leading-relaxed">Share your Excel, Word, PowerPoint, PDF, or data file with clear instructions.</p>
                      </div>
                   </div>
-                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#eef0ff] rounded-[24px] md:rounded-[28px] px-5 py-6 md:p-7">
-                     <div class="w-[60px] md:w-24 shrink-0 text-3xl md:text-5xl font-extrabold italic text-[#0053db] leading-none">02</div>
+                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#eef0ff] rounded-[24px] md:rounded-[30px] px-5 py-7 md:p-8">
+                     <div class="w-[70px] md:w-28 shrink-0 text-4xl md:text-6xl font-extrabold italic text-[#0053db] leading-none">02</div>
                      <div class="text-left">
-                        <h3 class="text-lg md:text-2xl font-extrabold text-[#111827] leading-tight mb-1">Review & Problem Scope</h3>
-                        <p class="text-sm md:text-base text-[#374151] leading-relaxed">I review the file, diagnose inefficiencies, and plan the best automated solution.</p>
+                        <h3 class="text-lg md:text-2xl font-extrabold text-[#111827] leading-tight mb-1">I Review Your Work</h3>
+                        <p class="text-sm md:text-base text-[#374151] leading-snug md:leading-relaxed">I check the file, understand the problem, and plan the best solution for your business.</p>
                      </div>
                   </div>
-                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#dfe4ff] rounded-[24px] md:rounded-[28px] px-5 py-6 md:p-7">
-                     <div class="w-[60px] md:w-24 shrink-0 text-3xl md:text-5xl font-extrabold italic text-[#0053db] leading-none">03</div>
+                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#dfe4ff] rounded-[24px] md:rounded-[30px] px-5 py-7 md:p-8">
+                     <div class="w-[70px] md:w-28 shrink-0 text-4xl md:text-6xl font-extrabold italic text-[#0053db] leading-none">03</div>
                      <div class="text-left">
-                        <h3 class="text-lg md:text-2xl font-extrabold text-[#111827] leading-tight mb-1">Clean, Automate & Design</h3>
-                        <p class="text-sm md:text-base text-[#374151] leading-relaxed">I remove errors, build interactive formulas/macros, and format everything cleanly.</p>
+                        <h3 class="text-lg md:text-2xl font-extrabold text-[#111827] leading-tight mb-1">Clean and Organize</h3>
+                        <p class="text-sm md:text-base text-[#374151] leading-snug md:leading-relaxed">I remove errors, fix formatting, organize data, create reports, and make the file easy to use.</p>
                      </div>
                   </div>
-                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#4555d8] rounded-[24px] md:rounded-[28px] px-5 py-6 md:p-7">
-                     <div class="w-[60px] md:w-24 shrink-0 text-3xl md:text-5xl font-extrabold italic text-white/50 leading-none">04</div>
+                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#4555d8] rounded-[24px] md:rounded-[30px] px-5 py-7 md:p-8">
+                     <div class="w-[70px] md:w-28 shrink-0 text-4xl md:text-6xl font-extrabold italic text-white/50 leading-none">04</div>
                      <div class="text-left">
-                        <h3 class="text-lg md:text-2xl font-extrabold text-white leading-tight mb-1">Receive Business-Ready Files</h3>
-                        <p class="text-sm md:text-base text-white/90 leading-relaxed">You receive a clean, fully validated, presentation-grade file ready for your team.</p>
+                        <h3 class="text-lg md:text-2xl font-extrabold text-white leading-tight mb-1">Get Final File</h3>
+                        <p class="text-sm md:text-base text-white/90 leading-snug md:leading-relaxed">You receive a clean, accurate, business-ready file that saves time and looks professional.</p>
                      </div>
                   </div>
-                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#26347f] rounded-[24px] md:rounded-[28px] px-5 py-6 md:p-7">
-                     <div class="w-[60px] md:w-24 shrink-0 text-3xl md:text-5xl font-extrabold italic text-white/35 leading-none">05</div>
+                  <div class="flex flex-row items-center gap-4 md:gap-8 bg-[#26347f] rounded-[24px] md:rounded-[30px] px-5 py-7 md:p-8">
+                     <div class="w-[70px] md:w-28 shrink-0 text-4xl md:text-6xl font-extrabold italic text-white/35 leading-none">05</div>
                      <div class="text-left">
-                        <h3 class="text-lg md:text-2xl font-extrabold text-white leading-tight mb-1">Support & Walkthrough</h3>
-                        <p class="text-sm md:text-base text-white/90 leading-relaxed">Need revisions or a quick explanation? I provide prompt post-delivery support.</p>
+                        <h3 class="text-lg md:text-2xl font-extrabold text-white leading-tight mb-1">Support After Delivery</h3>
+                        <p class="text-sm md:text-base text-white/90 leading-snug md:leading-relaxed">Need small changes or help understanding the file? I provide simple support after delivery.</p>
                      </div>
                   </div>
                </div>
             </div>
          </section>
 
-         <!-- Unified Portfolio Section -->
-         <section id="portfolio" class="bg-white py-16 md:py-24 border-b border-outline-variant overflow-hidden">
+         <section id="portfolio" class="bg-white py-14 md:py-20 border-b border-outline-variant overflow-hidden">
             <div class="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop">
-               <div class="text-center mb-12">
-                  <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Selected Projects</span>
+               <div class="text-center mb-10 md:mb-12">
                   <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-on-surface mb-4">
                      My <span class="text-primary">Portfolio</span>
                   </h2>
                   <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-                     Real-world dashboards, automated financial models, and clean data templates built for clients.
+                     Real work samples of Excel dashboards, PDF to Excel, KPI dashboards, and Word formatting.
                   </p>
                </div>
-               
-               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all border border-outline-variant overflow-hidden flex flex-col">
-                     <div class="w-full h-48 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-outline-variant/40">
-                        <img src="./sales-dashboard.png.jpg" alt="Sales Dashboard Screenshot" class="w-full h-full object-cover">
+               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden">
+                  <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-outline-variant flex flex-col">
+                     <div class="w-full h-44 sm:h-48 bg-gray-50 flex items-center justify-center overflow-hidden">
+                        <img src="./sales-dashboard.png.jpg" alt="Sales Dashboard Screenshot" class="w-full h-full object-contain">
                      </div>
-                     <div class="p-5 flex flex-col flex-grow">
-                        <span class="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Executive Reporting</span>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Sales Analytics Dashboard</h3>
-                        <p class="text-xs text-on-surface-variant mb-4 leading-relaxed flex-grow">Automated sales tracking with profit summaries, regional filters, and clean KPI visual cards.</p>
-                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="w-full text-center py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">View Sample</a>
+                     <div class="p-5 text-center flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Sales Dashboard</h3>
+                        <p class="text-sm text-on-surface-variant mb-5 leading-relaxed flex-grow">Excel dashboard for sales, profit and business performance tracking.</p>
+                        <a href="#" class="inline-block px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold">View Sample</a>
                      </div>
                   </div>
-
-                  <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all border border-outline-variant overflow-hidden flex flex-col">
-                     <div class="w-full h-48 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-outline-variant/40">
-                        <img src="./pdf-excel.png" alt="PDF to Excel Conversion" class="w-full h-full object-cover">
+                  <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-outline-variant flex flex-col">
+                     <div class="w-full h-44 sm:h-48 bg-gray-50 flex items-center justify-center overflow-hidden">
+                        <img src="./pdf-excel.png" alt="PDF to Excel Screenshot" class="w-full h-full object-contain">
                      </div>
-                     <div class="p-5 flex flex-col flex-grow">
-                        <span class="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Data Processing</span>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">PDF to Clean Excel Pipeline</h3>
-                        <p class="text-xs text-on-surface-variant mb-4 leading-relaxed flex-grow">Converted multi-page complex bank statements & invoices into structured tables with formulas.</p>
-                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="w-full text-center py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">View Sample</a>
+                     <div class="p-5 text-center flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2">PDF to Excel</h3>
+                        <p class="text-sm text-on-surface-variant mb-5 leading-relaxed flex-grow">Converted messy PDF data into clean and organized Excel format.</p>
+                        <a href="#" class="inline-block px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold">View Sample</a>
                      </div>
                   </div>
-
-                  <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all border border-outline-variant overflow-hidden flex flex-col">
-                     <div class="w-full h-48 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-outline-variant/40">
-                        <img src="./kpi-dashboard.png" alt="KPI Dashboard" class="w-full h-full object-cover">
+                  <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-outline-variant flex flex-col">
+                     <div class="w-full h-44 sm:h-48 bg-gray-50 flex items-center justify-center overflow-hidden">
+                        <img src="./kpi-dashboard.png" alt="KPI Dashboard Screenshot" class="w-full h-full object-contain">
                      </div>
-                     <div class="p-5 flex flex-col flex-grow">
-                        <span class="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Operations</span>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">KPI Performance Dashboard</h3>
-                        <p class="text-xs text-on-surface-variant mb-4 leading-relaxed flex-grow">High-level operational performance scorecard with monthly comparisons and conditional alerts.</p>
-                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="w-full text-center py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">View Sample</a>
+                     <div class="p-5 text-center flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2">KPI Dashboard</h3>
+                        <p class="text-sm text-on-surface-variant mb-5 leading-relaxed flex-grow">KPI dashboard for tracking performance and business progress.</p>
+                        <a href="#" class="inline-block px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold">View Sample</a>
                      </div>
                   </div>
-
-                  <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all border border-outline-variant overflow-hidden flex flex-col">
-                     <div class="w-full h-48 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-outline-variant/40">
-                        <img src="./word-formatting.png.png" alt="Word Document Formatting" class="w-full h-full object-cover">
+                  <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-outline-variant flex flex-col">
+                     <div class="w-full h-44 sm:h-48 bg-gray-50 flex items-center justify-center overflow-hidden">
+                        <img src="./word-formatting.png.png" alt="Word Formatting Screenshot" class="w-full h-full object-contain">
                      </div>
-                     <div class="p-5 flex flex-col flex-grow">
-                        <span class="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Documentation</span>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Word Proposal & Styling</h3>
-                        <p class="text-xs text-on-surface-variant mb-4 leading-relaxed flex-grow">Branded typography, automated table of contents, and clean business layout for client proposals.</p>
-                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="w-full text-center py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">View Sample</a>
+                     <div class="p-5 text-center flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Word Formatting</h3>
+                        <p class="text-sm text-on-surface-variant mb-5 leading-relaxed flex-grow">Professional Word document formatting and clean business layout.</p>
+                        <a href="#" class="inline-block px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold">View Sample</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="hidden lg:block overflow-hidden">
+                  <div class="flex gap-6 animate-scroll whitespace-nowrap">
+                     <div class="min-w-[320px] bg-white rounded-2xl shadow-lg overflow-hidden border border-outline-variant flex flex-col">
+                        <div class="w-full h-52 bg-gray-50 flex items-center justify-center overflow-hidden">
+                           <img src="./sales-dashboard.png.jpg" alt="Sales Dashboard Screenshot" class="w-full h-full object-contain">
+                        </div>
+                        <div class="p-5 text-center whitespace-normal">
+                           <h3 class="text-xl font-bold mb-2">Sales Dashboard</h3>
+                           <p class="text-base text-on-surface-variant mb-5 leading-relaxed">Excel dashboard for sales, profit and business performance tracking.</p>
+                           <a href="#" class="inline-block px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold">View Sample</a>
+                        </div>
+                     </div>
+                     <div class="min-w-[320px] bg-white rounded-2xl shadow-lg overflow-hidden border border-outline-variant flex flex-col">
+                        <div class="w-full h-52 bg-gray-50 flex items-center justify-center overflow-hidden">
+                           <img src="./pdf-excel.png" alt="PDF to Excel Screenshot" class="w-full h-full object-contain">
+                        </div>
+                        <div class="p-5 text-center whitespace-normal">
+                           <h3 class="text-xl font-bold mb-2">PDF to Excel</h3>
+                           <p class="text-base text-on-surface-variant mb-5 leading-relaxed">Converted messy PDF data into clean and organized Excel format.</p>
+                           <a href="#" class="inline-block px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold">View Sample</a>
+                        </div>
+                     </div>
+                     <div class="min-w-[320px] bg-white rounded-2xl shadow-lg overflow-hidden border border-outline-variant flex flex-col">
+                        <div class="w-full h-52 bg-gray-50 flex items-center justify-center overflow-hidden">
+                           <img src="./kpi-dashboard.png" alt="KPI Dashboard Screenshot" class="w-full h-full object-contain">
+                        </div>
+                        <div class="p-5 text-center whitespace-normal">
+                           <h3 class="text-xl font-bold mb-2">KPI Dashboard</h3>
+                           <p class="text-base text-on-surface-variant mb-5 leading-relaxed">KPI dashboard for tracking performance and business progress.</p>
+                           <a href="#" class="inline-block px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold">View Sample</a>
+                        </div>
+                     </div>
+                     <div class="min-w-[320px] bg-white rounded-2xl shadow-lg overflow-hidden border border-outline-variant flex flex-col">
+                        <div class="w-full h-52 bg-gray-50 flex items-center justify-center overflow-hidden">
+                           <img src="./word-formatting.png.png" alt="Word Formatting Screenshot" class="w-full h-full object-contain">
+                        </div>
+                        <div class="p-5 text-center whitespace-normal">
+                           <h3 class="text-xl font-bold mb-2">Word Formatting</h3>
+                           <p class="text-base text-on-surface-variant mb-5 leading-relaxed">Professional Word document formatting and clean business layout.</p>
+                           <a href="#" class="inline-block px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold">View Sample</a>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
 
-         <!-- Certifications Section -->
-         <section id="certifications" class="bg-[#f8fafc] py-16 md:py-24 border-b border-outline-variant">
+         <section id="certifications" class="bg-[#f8fafc] py-16 md:py-20 border-b border-outline-variant">
             <div class="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop">
-               <div class="text-center mb-12">
-                  <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Credentials</span>
+               <div class="text-center mb-10 md:mb-14">
                   <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-on-surface mb-4">
                      My <span class="text-primary">Certifications</span>
                   </h2>
                   <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-                     Validated credentials proving technical mastery in Excel, VBA automation, and business data analysis.
+                     Validated credentials and professional achievements proving excellence in Excel and data skills.
                   </p>
                </div>
-               <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm flex flex-col justify-between text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1">
                      <div>
-                        <a href="images/cert1.pdf" target="_blank" class="block w-full h-52 bg-slate-50 rounded-xl overflow-hidden mb-5 border border-outline-variant/50 relative group">
+                        <a href="cert1.pdf" target="_blank" class="block w-full h-52 bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-xl overflow-hidden mb-5 border border-outline-variant/50 relative group shadow-inner">
                            <img src="images/cert1-preview.jpg" alt="Become A Data Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                           <div class="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                           <div class="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1">
                               <span>✓ Verified</span>
                            </div>
                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-sm backdrop-blur-[2px]">
@@ -820,18 +848,17 @@
                            </div>
                         </a>
                         <h3 class="text-xl font-bold mb-2 text-on-surface">Become A Data Analyst</h3>
-                        <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Completed comprehensive Data Analyst track on WebVeda covering business analytics and reporting.</p>
+                        <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Completed Become A Data Analyst course on WebVeda, instructed by Raunak Singh.</p>
                      </div>
-                     <a href="images/cert1.pdf" target="_blank" class="inline-block w-full py-3 bg-primary text-on-primary rounded-lg font-semibold shadow-sm hover:opacity-90 transition-opacity">
+                     <a href="cert1.pdf" target="_blank" class="inline-block w-full py-3 bg-primary text-on-primary rounded-lg font-semibold shadow-sm hover:opacity-90 transition-opacity">
                         View Certificate
                      </a>
                   </div>
-
                   <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm flex flex-col justify-between text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1">
                      <div>
-                        <a href="images/cert2.pdf" target="_blank" class="block w-full h-52 bg-slate-50 rounded-xl overflow-hidden mb-5 border border-outline-variant/50 relative group">
+                        <a href="images/cert2.pdf" target="_blank" class="block w-full h-52 bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-xl overflow-hidden mb-5 border border-outline-variant/50 relative group shadow-inner">
                            <img src="images/cert2-preview.jpg" alt="Excel Using AI Workshop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                           <div class="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                           <div class="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1">
                               <span>✓ Verified</span>
                            </div>
                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-sm backdrop-blur-[2px]">
@@ -839,7 +866,7 @@
                            </div>
                         </a>
                         <h3 class="text-xl font-bold mb-2 text-on-surface">Excel Using AI Workshop</h3>
-                        <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Microsoft Excel AI specialization covering automated macro routines, complex nested logic, and prompt engineering.</p>
+                        <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Completed Microsoft Excel Using AI workshop covering formulas, dashboards, and VBA macros using AI.</p>
                      </div>
                      <a href="images/cert2.pdf" target="_blank" class="inline-block w-full py-3 bg-primary text-on-primary rounded-lg font-semibold shadow-sm hover:opacity-90 transition-opacity">
                         View Certificate
@@ -849,76 +876,64 @@
             </div>
          </section>
 
-         <!-- Testimonials Section -->
-         <section id="testimonials" class="w-full bg-[#f3f4f6] py-16 md:py-24 border-y border-outline-variant overflow-hidden">
+         <section id="testimonials" class="w-full bg-[#f3f4f6] py-16 md:py-20 border-y border-outline-variant overflow-hidden">
             <div class="max-w-6xl mx-auto px-5 md:px-10">
                <div class="text-center mb-12">
-                  <h2 class="text-3xl md:text-5xl font-bold text-on-surface mb-3">What My Clients Say</h2>
-                  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Real feedback from business leaders and founders.</p>
+                  <h2 class="font-headline-md text-headline-md text-on-surface mb-4">What My Clients Say</h2>
+                  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Real feedback from businesses that have optimized their data workflows.</p>
                </div>
                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                  <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant flex flex-col transition-transform hover:-translate-y-1">
+                  <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant flex flex-col transition-transform hover:-translate-y-1 fade-up">
                      <div class="flex items-center gap-2 mb-4">
-                        <span class="text-amber-500 text-xl tracking-wide">★★★★★</span>
-                        <span class="text-slate-900 text-lg font-bold">5.0</span>
+                        <span class="text-orange-500 text-2xl tracking-wide">★★★★★</span>
+                        <span class="text-black text-xl font-medium">5.0</span>
                      </div>
-                     <p class="text-on-surface-variant italic mb-6 flex-grow leading-relaxed">"Affan transformed our messy spreadsheets into a sleek, automated dashboard. We are easily saving over 20 hours a week on financial tracking."</p>
-                     <div class="flex items-center gap-3">
-                        <img alt="Sarah J." class="w-11 h-11 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9OJ4nbZUsvVvp0lV38oJLubNqSHYpfOK0qP_-dOOxK5xVLNnrk_b8NhfiIdsgdS4uGZSbPcFwkG1ubQH_Rh2sSfm_VQxhjyTFjKieF1h1j8jLbkoFKXo7tW5hjQgv2usMmOjOTeLLuHDrBqwZt62n-9bxGFA698aERhfrD_YAJl0ltH0t1i4CVqBvGJIfC8635afqry2IdtkVBaIkPMGe_z2qBhlf6CBtafV3kv5q4h3V40CPYgd-W4tAWbGWcZwn0VT163Mrgpa-">
-                        <div>
-                           <div class="font-bold text-slate-900">Sarah J.</div>
-                           <div class="text-xs text-on-surface-variant font-medium">Operations Director</div>
-                        </div>
+                     <p class="font-body-md text-body-md text-on-surface-variant italic mb-6 flex-grow">"Thanks, Affan, Data Specialist, transformed our messy spreadsheets into a sleek, automated dashboard. We're saving over 20 hours a week on reporting."</p>
+                     <div>
+                        <img alt="Sarah J." class="w-12 h-12 rounded-full object-cover mb-4 border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9OJ4nbZUsvVvp0lV38oJLubNqSHYpfOK0qP_-dOOxK5xVLNnrk_b8NhfiIdsgdS4uGZSbPcFwkG1ubQH_Rh2sSfm_VQxhjyTFjKieF1h1j8jLbkoFKXo7tW5hjQgv2usMmOjOTeLLuHDrBqwZt62n-9bxGFA698aERhfrD_YAJl0ltH0t1i4CVqBvGJIfC8635afqry2IdtkVBaIkPMGe_z2qBhlf6CBtafV3kv5q4h3V40CPYgd-W4tAWbGWcZwn0VT163Mrgpa-">
+                        <div class="font-headline-sm text-[18px] text-on-surface">Sarah J.</div>
+                        <div class="font-body-md text-sm text-on-surface-variant">Operations Director</div>
                      </div>
                   </div>
-
-                  <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant flex flex-col transition-transform hover:-translate-y-1">
+                  <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant flex flex-col transition-transform hover:-translate-y-1 fade-up">
                      <div class="flex items-center gap-2 mb-4">
-                        <span class="text-amber-500 text-xl tracking-wide">★★★★★</span>
-                        <span class="text-slate-900 text-lg font-bold">5.0</span>
+                        <span class="text-orange-500 text-2xl tracking-wide">★★★★★</span>
+                        <span class="text-black text-xl font-medium">5.0</span>
                      </div>
-                     <p class="text-on-surface-variant italic mb-6 flex-grow leading-relaxed">"The accuracy and attention to detail was exceptional. Our cash flow projection models have never been more reliable and easy to present."</p>
-                     <div class="flex items-center gap-3">
-                        <img alt="Michael T." class="w-11 h-11 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQY6-XDhIXxTr5QN1YLwu6tTIlNEjXMgYN8b-T_yYPqaTB6_C_rGIXuBGggi10B3vyBFDEvGP8B2p3y5bfjBuUsFuFr7UDMiq7CoIw5-7wXqlMbhwiJf8HVP4nmXiTFN4OJQvn0zenZ9OZojJxb_bjYLXYEXbIwtqix4gEJnzAgiyl1J1rnpXjbLriDA32wIyZgse01S21rZJ4i1MwKvNDvtqnJOks7XGuLpbybonpyNg1arIMfT7WishemxQJ0vjUU-CoXmFqiLjh">
-                        <div>
-                           <div class="font-bold text-slate-900">Michael T.</div>
-                           <div class="text-xs text-on-surface-variant font-medium">Finance Director</div>
-                        </div>
+                     <p class="font-body-md text-body-md text-on-surface-variant italic mb-6 flex-grow">"The level of accuracy and attention to detail is unmatched. Our financial models have never been more reliable."</p>
+                     <div>
+                        <img alt="Michael T." class="w-12 h-12 rounded-full object-cover mb-4 border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQY6-XDhIXxTr5QN1YLwu6tTIlNEjXMgYN8b-T_yYPqaTB6_C_rGIXuBGggi10B3vyBFDEvGP8B2p3y5bfjBuUsFuFr7UDMiq7CoIw5-7wXqlMbhwiJf8HVP4nmXiTFN4OJQvn0zenZ9OZojJxb_bjYLXYEXbIwtqix4gEJnzAgiyl1J1rnpXjbLriDA32wIyZgse01S21rZJ4i1MwKvNDvtqnJOks7XGuLpbybonpyNg1arIMfT7WishemxQJ0vjUU-CoXmFqiLjh">
+                        <div class="font-headline-sm text-[18px] text-on-surface">Michael T.</div>
+                        <div class="font-body-md text-sm text-on-surface-variant">CFO</div>
                      </div>
                   </div>
-
-                  <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant flex flex-col transition-transform hover:-translate-y-1">
+                  <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant flex flex-col transition-transform hover:-translate-y-1 fade-up">
                      <div class="flex items-center gap-2 mb-4">
-                        <span class="text-amber-500 text-xl tracking-wide">★★★★★</span>
-                        <span class="text-slate-900 text-lg font-bold">5.0</span>
+                        <span class="text-orange-500 text-2xl tracking-wide">★★★★★</span>
+                        <span class="text-black text-xl font-medium">5.0</span>
                      </div>
-                     <p class="text-on-surface-variant italic mb-6 flex-grow leading-relaxed">"Fast, highly communicative, and reliable. Affan didn't just clean our files; he optimized our entire spreadsheet infrastructure."</p>
-                     <div class="flex items-center gap-3">
-                        <img alt="David R." class="w-11 h-11 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoSTq3Lofg-uTyqSX66YhK51UMchTtd8Xu5W9EdjVK41SOpUUchq86FWfN4wW6FJ9z-41fgFpdrRcua16yQqQQJJC0d46Hq8d1A9-7aW5eC4dmDdKVS1_rnh2S_Lg4gcfOBJkwifpu-gBePocXrWgg6OzO7m5Ob9eCxSfz39qqlvjDhgcF_DbhuWAO5GimeZ7rDRfcXJ0LEcx5PREvv_1Kov_eMndNGspObIYbj1ppITSKKMCOHsscc87GXdyHf3O4ZE4E04uEKqnI">
-                        <div>
-                           <div class="font-bold text-slate-900">David R.</div>
-                           <div class="text-xs text-on-surface-variant font-medium">Supply Chain Manager</div>
-                        </div>
+                     <p class="font-body-md text-body-md text-on-surface-variant italic mb-6 flex-grow">"Affan only 18 years Old Fast, professional, and highly skilled. They didn't just build the tool; they optimized our entire workflow."</p>
+                     <div>
+                        <img alt="David R." class="w-12 h-12 rounded-full object-cover mb-4 border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoSTq3Lofg-uTyqSX66YhK51UMchTtd8Xu5W9EdjVK41SOpUUchq86FWfN4wW6FJ9z-41fgFpdrRcua16yQqQQJJC0d46Hq8d1A9-7aW5eC4dmDdKVS1_rnh2S_Lg4gcfOBJkwifpu-gBePocXrWgg6OzO7m5Ob9eCxSfz39qqlvjDhgcF_DbhuWAO5GimeZ7rDRfcXJ0LEcx5PREvv_1Kov_eMndNGspObIYbj1ppITSKKMCOHsscc87GXdyHf3O4ZE4E04uEKqnI">
+                        <div class="font-headline-sm text-[18px] text-on-surface">David R.</div>
+                        <div class="font-body-md text-sm text-on-surface-variant">Logistics Manager</div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
 
-         <!-- Pricing Section -->
-         <section class="bg-[#CCD5FF] py-16 md:py-24 border-b border-outline-variant" id="pricing">
-            <div class="max-w-container-max mx-auto px-4 md:px-margin-desktop">
-               <div class="text-center mb-12">
+         <section class="bg-[#CCD5FF] py-16 md:py-20 border-b border-outline-variant" id="pricing">
+            <div class="max-w-container-max mx-auto px-3 md:px-margin-desktop">
+               <div class="text-center mb-10">
                   <h2 class="text-3xl md:text-5xl font-bold text-on-surface mb-3">
-                     Transparent Project Pricing
+                     Simple Pricing for Every Project
                   </h2>
                   <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto">
-                     Choose the exact package that fits your Excel, reporting, or data requirements.
+                     Choose the package that fits your Excel, Word, PowerPoint, or data work.
                   </p>
                </div>
-               
-               <!-- Mobile Tabbed Pricing -->
-               <div class="md:hidden w-full bg-white rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
+               <div class="md:hidden w-full max-w-none mx-auto bg-white rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
                   <div class="grid grid-cols-3 text-center border-b border-outline-variant">
                      <button onclick="showPlan('basic')" id="tab-basic" class="py-4 font-bold text-primary border-b-4 border-primary">
                         Basic
@@ -930,139 +945,141 @@
                         Premium
                      </button>
                   </div>
-                  <div id="plan-basic" class="pricing-plan p-6">
+                  <div id="plan-basic" class="pricing-plan p-5">
                      <h3 class="text-2xl font-bold mb-1">Basic</h3>
-                     <p class="text-on-surface-variant text-sm mb-4">Quick Fixes & File Organization</p>
+                     <p class="text-on-surface-variant mb-5">Small Tasks & Quick Fixes</p>
                      <div class="mb-5">
                         <span class="text-4xl font-extrabold text-primary">$29</span>
                         <span class="text-on-surface-variant font-semibold"> / ₹1,999</span>
                      </div>
-                     <ul class="space-y-3 mb-6 text-left text-sm">
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Basic Excel Data Entry & Cleaning</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Word Formatting & Layout Fixes</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Simple 5-10 Slide PowerPoint Design</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">⏱</span><span>2-Day Delivery Guarantee</span></li>
+                     <ul class="space-y-4 mb-7 text-left">
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Basic Excel Data Entry & Cleaning</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Word Formatting & Layout Fixes</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Simple 5-10 Slide PowerPoint Design</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>2-Day Delivery</span></li>
                      </ul>
-                     <a href="https://rzp.io/rzp/aQQzUKC" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-3 shadow-xs">
+                     <!-- Basic Plan Link: https://rzp.io/rzp/aQQzUKC -->
+                     <a href="https://rzp.io/rzp/aQQzUKC" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-4">
                         Buy Now
                      </a>
-                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="block text-center text-primary text-sm font-bold underline">
+                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="block text-center text-primary font-bold underline">
                         Book a Free 15-Min Setup Call
                      </a>
                   </div>
                   <div id="plan-standard" class="pricing-plan hidden p-6">
-                     <div class="inline-block bg-primary text-white px-3 py-1 rounded-full text-xs font-bold mb-3">
+                     <div class="inline-block bg-primary text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
                         MOST POPULAR
                      </div>
                      <h3 class="text-2xl font-bold mb-1">Standard</h3>
-                     <p class="text-on-surface-variant text-sm mb-4">Dashboards & Automated Models</p>
+                     <p class="text-on-surface-variant mb-5">Dashboards, Reports & Automation</p>
                      <div class="mb-5">
                         <span class="text-4xl font-extrabold text-primary">$99</span>
                         <span class="text-on-surface-variant font-semibold"> / ₹7,999</span>
                      </div>
-                     <ul class="space-y-3 mb-6 text-left text-sm">
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">+</span><span class="font-semibold">Everything in Basic</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Advanced Excel Formulas & Pivot Tables</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Interactive Charts & Macro Routines</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Custom Pitch Decks & Branded Slides</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">⏱</span><span>4-Day Delivery</span></li>
+                     <ul class="space-y-4 mb-7 text-left">
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">+</span><span class="font-semibold">Everything in Basic</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Advanced Excel Formulas & Pivot Tables</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Professional Word Templates & Layouts</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Custom Pitch Decks & Branded Slides</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>4-Day Delivery</span></li>
                      </ul>
-                     <a href="https://rzp.io/rzp/dJSEPHY" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-3 shadow-xs">
+                     <!-- Standard Plan Link: https://rzp.io/rzp/dJSEPHY -->
+                     <a href="https://rzp.io/rzp/dJSEPHY" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-4">
                         Get Started
                      </a>
-                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="block text-center text-primary text-sm font-bold underline">
+                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="block text-center text-primary font-bold underline">
                         Book a Call
                      </a>
                   </div>
                   <div id="plan-premium" class="pricing-plan hidden p-6">
                      <h3 class="text-2xl font-bold mb-1">Premium</h3>
-                     <p class="text-on-surface-variant text-sm mb-4">Complete Reporting Infrastructure</p>
+                     <p class="text-on-surface-variant mb-5">Complete Business Reporting Setup</p>
                      <div class="mb-5">
                         <span class="text-4xl font-extrabold text-primary">$249</span>
-                        <span class="text-on-surface-variant font-semibold"> / ₹19,999</span>
+                        <span class="text-on-surface-variant font-semibold"> </span>
                      </div>
-                     <ul class="space-y-3 mb-6 text-left text-sm">
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">+</span><span class="font-semibold">Everything in Standard</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Multi-sheet System & Data Automation</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Custom KPI Tracking & Visual Alerts</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">✓</span><span>Dedicated Walkthrough Video & Guide</span></li>
-                        <li class="flex gap-2.5"><span class="text-primary font-bold">⏱</span><span>7-Day Delivery</span></li>
+                     <ul class="space-y-4 mb-7 text-left">
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">+</span><span class="font-semibold">Everything in Standard</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Power BI Dashboard Integration</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Custom KPI & Performance Tracking</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Advanced PowerPoint Master Slides</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>7-Day Delivery</span></li>
                      </ul>
-                     <a href="https://rzp.io/rzp/3Yuyzup" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-3 shadow-xs">
+                     <!-- Premium Plan Link: https://rzp.io/rzp/3Yuyzup -->
+                     <a href="https://rzp.io/rzp/3Yuyzup" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-4">
                         Get Started
                      </a>
-                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="block text-center text-primary text-sm font-bold underline">
+                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="block text-center text-primary font-bold underline">
                         Book a Call
                      </a>
                   </div>
                </div>
-
-               <!-- Desktop 3-Card Grid -->
                <div class="hidden md:grid grid-cols-3 gap-8 items-stretch">
-                  <div class="bg-white rounded-2xl border border-outline-variant p-8 shadow-sm flex flex-col">
-                     <h3 class="text-2xl font-bold mb-1">Basic</h3>
-                     <p class="text-on-surface-variant text-sm mb-6">Small Tasks & Quick Fixes</p>
+                  <div class="bg-white rounded-2xl border border-outline-variant p-8 shadow-sm flex flex-col fade-up">
+                     <h3 class="text-2xl font-bold mb-2">Basic</h3>
+                     <p class="text-on-surface-variant mb-6">Small Tasks & Quick Fixes</p>
                      <div class="mb-6">
                         <span class="text-4xl font-extrabold text-primary">$29</span>
-                        <span class="text-on-surface-variant font-semibold"> / ₹1,999</span>
+                        <span class="text-on-surface-variant font-semibold"> </span>
                      </div>
-                     <ul class="space-y-3.5 mb-8 flex-grow text-left text-sm">
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Basic Excel Data Entry & Cleaning</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Word Formatting & Layout Fixes</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Simple 5-10 Slide PowerPoint Design</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">⏱</span><span>2-Day Delivery</span></li>
+                     <ul class="space-y-4 mb-8 flex-grow text-left">
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Basic Excel Data Entry & Cleaning</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Word Formatting & Layout Fixes</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Simple 5-10 Slide PowerPoint Design</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>2-Day Delivery</span></li>
                      </ul>
-                     <a href="https://rzp.io/rzp/aQQzUKC" target="_blank" class="w-full text-center bg-slate-800 text-white py-3 rounded-xl font-bold mb-3 hover:bg-slate-900 transition-colors">
+                     <!-- Basic Plan Link: https://rzp.io/rzp/aQQzUKC -->
+                     <a href="https://rzp.io/rzp/aQQzUKC" target="_blank" class="w-full text-center bg-slate-700 text-white py-3 rounded-lg font-bold mb-4">
                         Buy Now
                      </a>
-                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="text-center text-primary text-sm font-bold underline">
+                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="text-center text-primary font-bold underline">
                         Book a Free 15-Min Setup Call
                      </a>
                   </div>
-
-                  <div class="bg-white rounded-2xl border-2 border-primary p-8 shadow-xl flex flex-col relative md:scale-105 z-10">
-                     <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow">
-                        Most Popular
+                  <div class="bg-white rounded-2xl border-2 border-primary p-8 shadow-xl flex flex-col relative md:scale-105">
+                     <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-5 py-1.5 rounded-full text-sm font-bold shadow">
+                        🔥 MOST POPULAR
                      </div>
-                     <h3 class="text-2xl font-bold mb-1">Standard</h3>
-                     <p class="text-on-surface-variant text-sm mb-6">Dashboards, Reports & Automation</p>
+                     <h3 class="text-2xl font-bold mb-2">Standard</h3>
+                     <p class="text-on-surface-variant mb-6">Dashboards, Reports & Automation</p>
                      <div class="mb-6">
                         <span class="text-4xl font-extrabold text-primary">$99</span>
-                        <span class="text-on-surface-variant font-semibold"> / ₹7,999</span>
+                        <span class="text-on-surface-variant font-semibold"> </span>
                      </div>
-                     <ul class="space-y-3.5 mb-8 flex-grow text-left text-sm">
-                        <li class="flex gap-3"><span class="text-primary font-bold">+</span><span class="font-semibold">Everything in Basic</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Advanced Excel Formulas & Pivot Tables</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Interactive Dashboards & Filters</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Custom Pitch Decks & Branded Slides</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">⏱</span><span>4-Day Delivery</span></li>
+                     <ul class="space-y-4 mb-8 flex-grow text-left">
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">+</span><span class="font-semibold">Everything in Basic</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Advanced Excel Formulas & Pivot Tables</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Professional Word Templates & Layouts</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Custom Pitch Decks & Branded Slides</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>4-Day Delivery</span></li>
                      </ul>
-                     <a href="https://rzp.io/rzp/dJSEPHY" target="_blank" class="w-full text-center bg-primary text-white py-3 rounded-xl font-bold mb-3 hover:bg-primary-container shadow-md transition-all">
+                     <!-- Standard Plan Link: https://rzp.io/rzp/dJSEPHY -->
+                     <a href="https://rzp.io/rzp/dJSEPHY" target="_blank" class="w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-4">
                         Get Started
                      </a>
-                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="text-center text-primary text-sm font-bold underline">
+                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="text-center text-primary font-bold underline">
                         Book a Call
                      </a>
                   </div>
-
                   <div class="bg-white rounded-2xl border border-outline-variant p-8 shadow-sm flex flex-col">
-                     <h3 class="text-2xl font-bold mb-1">Premium</h3>
-                     <p class="text-on-surface-variant text-sm mb-6">Complete Business Reporting Setup</p>
+                     <h3 class="text-2xl font-bold mb-2">Premium</h3>
+                     <p class="text-on-surface-variant mb-6">Complete Business Reporting Setup</p>
                      <div class="mb-6">
                         <span class="text-4xl font-extrabold text-primary">$249</span>
                         <span class="text-on-surface-variant font-semibold"> / ₹19,999</span>
                      </div>
-                     <ul class="space-y-3.5 mb-8 flex-grow text-left text-sm">
-                        <li class="flex gap-3"><span class="text-primary font-bold">+</span><span class="font-semibold">Everything in Standard</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Multi-sheet System & Data Automation</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Custom KPI Tracking & Visual Alerts</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">✓</span><span>Dedicated Walkthrough Video & Guide</span></li>
-                        <li class="flex gap-3"><span class="text-primary font-bold">⏱</span><span>7-Day Delivery</span></li>
+                     <ul class="space-y-4 mb-8 flex-grow text-left">
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">+</span><span class="font-semibold">Everything in Standard</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Power BI Dashboard Integration</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Custom KPI & Performance Tracking</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Advanced PowerPoint Master Slides</span></li>
+                        <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>7-Day Delivery</span></li>
                      </ul>
-                     <a href="https://rzp.io/rzp/3Yuyzup" target="_blank" class="w-full text-center bg-slate-800 text-white py-3 rounded-xl font-bold mb-3 hover:bg-slate-900 transition-colors">
+                     <!-- Premium Plan Link: https://rzp.io/rzp/3Yuyzup -->
+                     <a href="https://rzp.io/rzp/3Yuyzup" target="_blank" class="w-full text-center bg-slate-700 text-white py-3 rounded-lg font-bold mb-4">
                         Get Started
                      </a>
-                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="text-center text-primary text-sm font-bold underline">
+                     <a href="https://calendly.com/mohdaffan54511/30min" target="_blank" class="text-center text-primary font-bold underline">
                         Book a Call
                      </a>
                   </div>
@@ -1070,41 +1087,40 @@
             </div>
          </section>
 
-         <!-- Contact Section -->
          <section id="contact" class="bg-[#EEF2FF] py-20 border-b border-outline-variant">
             <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                <div class="text-center mb-12">
-                  <h2 class="text-3xl md:text-5xl font-bold text-on-surface mb-3">Let's Build Something Great</h2>
-                  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Ready to automate your workflows or organize your data? Send me a message and I'll get back to you within 24 hours.</p>
+                  <h2 class="font-headline-md text-headline-md text-on-surface mb-4">Let's Build Something Great</h2>
+                  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Ready to automate your workflows or gain deeper insights from your data? Send me a message and I'll get back to you within 24 hours.</p>
                </div>
-               <div class="max-w-2xl mx-auto bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant">
+               <div class="max-w-2xl mx-auto bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant">
                   <form action="https://formspree.io/f/mbdejljv" class="space-y-6" method="POST">
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
-                           <label class="block font-medium text-sm text-slate-700" for="full-name">Full Name</label>
-                           <input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="full-name" name="full-name" placeholder="John Doe" type="text" required>
+                           <label class="block font-label-caps text-label-caps text-on-surface-variant" for="full-name">Full Name</label>
+                           <input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="full-name" name="full-name" placeholder="John Doe" type="text">
                         </div>
                         <div class="space-y-2">
-                           <label class="block font-medium text-sm text-slate-700" for="email">Business Email</label>
-                           <input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="email" name="email" placeholder="john@company.com" type="email" required>
+                           <label class="block font-label-caps text-label-caps text-on-surface-variant" for="email">Business Email</label>
+                           <input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="email" name="email" placeholder="john@company.com" type="email">
                         </div>
                      </div>
                      <div class="space-y-2">
-                        <label class="block font-medium text-sm text-slate-700" for="project-type">Project Type</label>
-                        <select class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="project-type" name="project-type">
-                           <option>Excel Dashboard & Reporting</option>
-                           <option>Excel Data Cleaning & Automation</option>
-                           <option>PDF to Excel / Word Conversion</option>
+                        <label class="block font-label-caps text-label-caps text-on-surface-variant" for="project-type">Project Type</label>
+                        <select class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="project-type" name="project-type">
+                           <option>Excel Data Cleaning</option>
+                           <option>Excel Dashboard</option>
+                           <option>PDF to Excel / Word</option>
                            <option>Word Document Formatting</option>
-                           <option>PowerPoint Pitch Deck</option>
-                           <option>Custom MS Office Automation</option>
+                           <option>PowerPoint Presentation Design</option>
+                           <option>Other</option>
                         </select>
                      </div>
                      <div class="space-y-2">
-                        <label class="block font-medium text-sm text-slate-700" for="message">Message</label>
-                        <textarea class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all h-32 font-sans" id="message" name="message" placeholder="Describe your data or file requirements..." required></textarea>
+                        <label class="block font-label-caps text-label-caps text-on-surface-variant" for="message">Message</label>
+                        <textarea class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all h-32 font-sans" id="message" name="message" placeholder="Tell me about your data challenges..."></textarea>
                      </div>
-                     <button class="w-full py-4 bg-primary text-on-primary text-base font-semibold rounded-xl shadow-md hover:bg-primary-container transition-all" type="submit">
+                     <button class="w-full py-4 bg-primary text-on-primary text-body-lg font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity" type="submit">
                         Send Message
                      </button>
                   </form>
@@ -1112,74 +1128,88 @@
             </div>
          </section>
 
-         <!-- FAQ Section -->
-         <section id="faq" class="bg-white py-16 md:py-24 border-b border-outline-variant">
+         <section id="faq" class="bg-white py-14 md:py-20 border-b border-outline-variant">
             <div class="w-full max-w-5xl mx-auto px-5 sm:px-8 md:px-10">
-               <div class="text-center mb-12">
-                  <h2 class="text-3xl md:text-5xl font-extrabold text-[#050816]">
-                     Frequently <span class="text-[#29379b]">Asked Questions</span>
+               <div class="text-center mb-10 md:mb-14">
+                  <h2 class="text-[40px] sm:text-[48px] md:text-6xl font-extrabold leading-[1.08] text-[#050816]">
+                     Frequently <span class="text-[#29379b]">Asked</span><br>
+                     <span class="text-[#29379b]">Questions</span>
                   </h2>
                </div>
                <div class="w-full divide-y divide-gray-200">
                   <details class="group">
-                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6">
-                        <h3 class="text-lg md:text-2xl font-bold text-[#050816]">What services do you provide?</h3>
-                        <span class="text-3xl font-light text-slate-700 group-open:rotate-45 transition-transform">+</span>
+                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6 md:py-7">
+                        <h3 class="text-[20px] sm:text-[22px] md:text-3xl font-extrabold leading-tight text-left text-[#050816]">What services do you provide?</h3>
+                        <span class="text-4xl font-light text-[#111827] group-open:rotate-45 transition-transform">+</span>
                      </summary>
-                     <p class="pb-6 text-base text-gray-600 leading-relaxed">I specialize in Excel data cleaning, interactive KPI dashboards, automated reporting templates, PDF to Excel conversion, Word document formatting, and PowerPoint presentations.</p>
+                     <p class="pb-6 text-base md:text-lg text-gray-600 leading-relaxed text-left">I provide Excel data cleaning, dashboards, PDF to Excel conversion, Word formatting, PowerPoint design, and business reporting support.</p>
                   </details>
                   <details class="group">
-                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6">
-                        <h3 class="text-lg md:text-2xl font-bold text-[#050816]">Can you clean and automate messy Excel files?</h3>
-                        <span class="text-3xl font-light text-slate-700 group-open:rotate-45 transition-transform">+</span>
+                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6 md:py-7">
+                        <h3 class="text-[20px] sm:text-[22px] md:text-3xl font-extrabold leading-tight text-left text-[#050816]">Can you clean messy Excel data?</h3>
+                        <span class="text-4xl font-light text-[#111827] group-open:rotate-45 transition-transform">+</span>
                      </summary>
-                     <p class="pb-6 text-base text-gray-600 leading-relaxed">Yes. I remove duplicates, standardize phone/address fields, repair broken formulas, and set up automated data validation and macro triggers.</p>
+                     <p class="pb-6 text-base md:text-lg text-gray-600 leading-relaxed text-left">Yes. I can remove duplicates, fix formatting, organize columns, clean errors, and prepare your Excel file professionally.</p>
                   </details>
                   <details class="group">
-                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6">
-                        <h3 class="text-lg md:text-2xl font-bold text-[#050816]">How fast is project delivery?</h3>
-                        <span class="text-3xl font-light text-slate-700 group-open:rotate-45 transition-transform">+</span>
+                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6 md:py-7">
+                        <h3 class="text-[20px] sm:text-[22px] md:text-3xl font-extrabold leading-tight text-left text-[#050816]">Do you create professional dashboards?</h3>
+                        <span class="text-4xl font-light text-[#111827] group-open:rotate-45 transition-transform">+</span>
                      </summary>
-                     <p class="pb-6 text-base text-gray-600 leading-relaxed">Basic data fixes and conversions take 24–48 hours. Complex interactive dashboards and full automation setups typically take 3–5 business days.</p>
+                     <p class="pb-6 text-base md:text-lg text-gray-600 leading-relaxed text-left">Yes. I can create Excel dashboards with charts, KPIs, filters, summaries, and clean visual reports.</p>
                   </details>
                   <details class="group">
-                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6">
-                        <h3 class="text-lg md:text-2xl font-bold text-[#050816]">Is my business data confidential?</h3>
-                        <span class="text-3xl font-light text-slate-700 group-open:rotate-45 transition-transform">+</span>
+                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6 md:py-7">
+                        <h3 class="text-[20px] sm:text-[22px] md:text-3xl font-extrabold leading-tight text-left text-[#050816]">How fast can you deliver the work?</h3>
+                        <span class="text-4xl font-light text-[#111827] group-open:rotate-45 transition-transform">+</span>
                      </summary>
-                     <p class="pb-6 text-base text-gray-600 leading-relaxed">Absolutely. All client datasets, proprietary formulas, and business numbers are handled with strict privacy and never shared with third parties.</p>
+                     <p class="pb-6 text-base md:text-lg text-gray-600 leading-relaxed text-left">Small tasks can be completed within 24–48 hours. Larger dashboards or reports may take 3–5 days depending on the project.</p>
                   </details>
                   <details class="group">
-                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6">
-                        <h3 class="text-lg md:text-2xl font-bold text-[#050816]">Do you work with international clients?</h3>
-                        <span class="text-3xl font-light text-slate-700 group-open:rotate-45 transition-transform">+</span>
+                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6 md:py-7">
+                        <h3 class="text-[20px] sm:text-[22px] md:text-3xl font-extrabold leading-tight text-left text-[#050816]">Is my business data safe?</h3>
+                        <span class="text-4xl font-light text-[#111827] group-open:rotate-45 transition-transform">+</span>
                      </summary>
-                     <p class="pb-6 text-base text-gray-600 leading-relaxed">Yes, I regularly collaborate with businesses across India, the US, UK, Canada, and Europe remotely via Zoom, Google Meet, and email.</p>
+                     <p class="pb-6 text-base md:text-lg text-gray-600 leading-relaxed text-left">Yes. Your files and business data are handled privately and are not shared with others.</p>
+                  </details>
+                  <details class="group">
+                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6 md:py-7">
+                        <h3 class="text-[20px] sm:text-[22px] md:text-3xl font-extrabold leading-tight text-left text-[#050816]">Do you work with international clients?</h3>
+                        <span class="text-4xl font-light text-[#111827] group-open:rotate-45 transition-transform">+</span>
+                     </summary>
+                     <p class="pb-6 text-base md:text-lg text-gray-600 leading-relaxed text-left">Yes. I work with clients from India, USA, UK, Canada, and other countries remotely.</p>
+                  </details>
+                  <details class="group">
+                     <summary class="grid grid-cols-[1fr_auto] items-center gap-4 cursor-pointer list-none py-6 md:py-7">
+                        <h3 class="text-[20px] sm:text-[22px] md:text-3xl font-extrabold leading-tight text-left text-[#050816]">How can I start a project with you?</h3>
+                        <span class="text-4xl font-light text-[#111827] group-open:rotate-45 transition-transform">+</span>
+                     </summary>
+                     <p class="pb-6 text-base md:text-lg text-gray-600 leading-relaxed text-left">You can contact me through the website form, WhatsApp, email, or book a call. Send your file and explain what you need.</p>
                   </details>
                </div>
             </div>
          </section>
       </main>
 
-      <!-- Footer -->
       <footer class="bg-[#272b70] text-white rounded-t-[32px] relative overflow-hidden">
          <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop py-12 md:py-16">
             <div class="text-center mb-10">
-               <h2 class="text-4xl font-bold mb-4">Data Specialist</h2>
-               <p class="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                  Delivering executive-ready MS Office automation, Excel dashboards, and reliable data systems worldwide.
+               <h2 class="text-4xl font-bold mb-5">Data Specialist</h2>
+               <p class="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
+                  Professional MS Office, Excel dashboards, data cleaning, Word formatting,
+                  PowerPoint design, and business reporting solutions.
                </p>
             </div>
-            <div class="border border-white/20 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 max-w-2xl mx-auto">
-               <p class="font-bold text-base md:text-lg text-center">Fast Direct Support on WhatsApp</p>
-               <a href="https://wa.me/+918573879324" target="_blank" class="bg-white text-[#272b70] px-6 py-2.5 rounded-full font-bold hover:bg-slate-100 transition">
-                  Chat Now
+            <div class="border border-white/20 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
+               <p class="font-bold text-lg text-center">24X7 Support on WhatsApp</p>
+               <a href="https://wa.me/+918573879324" target="_blank" class="bg-white text-[#272b70] px-5 py-3 rounded-full font-bold hover:opacity-90 transition">
+                  Chat On WhatsApp
                </a>
             </div>
-            <div class="grid grid-cols-3 gap-5 border-b border-white/20 pb-10 text-center max-w-4xl mx-auto">
+            <div class="grid grid-cols-3 gap-5 border-b border-white/20 pb-10 text-center">
                <div>
-                  <h3 class="font-bold text-base mb-3">Navigation</h3>
-                  <ul class="space-y-2 text-white/75 text-sm">
+                  <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                  <ul class="space-y-3 text-white/75 text-base">
                      <li><a href="#services" class="hover:text-white">Services</a></li>
                      <li><a href="#portfolio" class="hover:text-white">Portfolio</a></li>
                      <li><a href="#certifications" class="hover:text-white">Certificates</a></li>
@@ -1187,39 +1217,34 @@
                   </ul>
                </div>
                <div>
-                  <h3 class="font-bold text-base mb-3">Company</h3>
-                  <ul class="space-y-2 text-white/75 text-sm">
+                  <h3 class="font-bold text-lg mb-4">Imp. Links</h3>
+                  <ul class="space-y-3 text-white/75 text-base">
                      <li><a href="#testimonials" class="hover:text-white">Testimonials</a></li>
                      <li><a href="#faq" class="hover:text-white">FAQ</a></li>
                      <li><a href="#contact" class="hover:text-white">Contact</a></li>
                   </ul>
                </div>
                <div>
-                  <h3 class="font-bold text-base mb-3">Connect</h3>
-                  <ul class="space-y-2 text-white/75 text-sm">
+                  <h3 class="font-bold text-lg mb-4">Contact</h3>
+                  <ul class="space-y-3 text-white/75 text-base">
                      <li><a href="mailto:mohdaffan54511@gmail.com" class="hover:text-white">Email</a></li>
                      <li><a href="https://www.linkedin.com/in/mohammad-affan-617390308" target="_blank" class="hover:text-white">LinkedIn</a></li>
                      <li><a href="https://wa.me/918573879324" target="_blank" class="hover:text-white">WhatsApp</a></li>
                   </ul>
                </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 text-white/70 text-xs text-center max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 text-white/70 text-sm text-center">
                <p>© 2026 Data Specialist. All rights reserved.</p>
-               <div class="flex flex-wrap justify-center gap-4">
+               <div class="flex flex-wrap justify-center gap-5">
                   <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
                   <a href="terms.html" class="hover:text-white">Terms & Conditions</a>
-                  <a href="refund.html" class="hover:text-white">Refund Policy</a>
+                  <a href="refund.html" class="refund.html" class="hover:text-white">Refund Policy</a>
+                  <a href="#contact" class="hover:text-white">Contact Us</a>
                </div>
             </div>
          </div>
       </footer>
 
-      <!-- Floating WhatsApp -->
-      <a href="https://wa.me/918573879324" target="_blank" class="fixed bottom-5 right-5 z-50 animate-pulse hover:scale-110 transition-transform duration-300">
-         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp" class="w-14 h-14 rounded-full shadow-lg">
-      </a>
-
-      <!-- Scripts -->
       <script>
          window.addEventListener('scroll', () => {
              const nav = document.getElementById('main-nav');
@@ -1229,7 +1254,11 @@
                  nav.classList.remove('shadow-md', 'bg-opacity-95', 'backdrop-blur-sm');
              }
          });
-
+      </script>
+      <a href="https://wa.me/918573879324" target="_blank" class="fixed bottom-5 right-5 z-50 animate-pulse hover:scale-110 transition-transform duration-300">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp" class="w-14 h-14 rounded-full shadow-lg">
+      </a>
+      <script>
          function showPlan(plan) {
            const plans = ["basic", "standard", "premium"];
 
