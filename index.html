@@ -19,13 +19,8 @@
       <meta property="og:url" content="https://dataspecialist.online">
       <meta property="og:type" content="website">
       <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-      
-      <!-- Tech / Startup Font Pair: Poppins for Headings + Inter for Body -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-      
       <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -94,22 +89,20 @@
                         "gutter": "24px"
                     },
                     "fontFamily": {
-                        "sans": ["Inter", "sans-serif"],
-                        "heading": ["Poppins", "sans-serif"],
-                        "display-lg": ["Poppins", "sans-serif"],
-                        "display-lg-mobile": ["Poppins", "sans-serif"],
-                        "headline-md": ["Poppins", "sans-serif"],
-                        "headline-sm": ["Poppins", "sans-serif"],
-                        "body-lg": ["Inter", "sans-serif"],
-                        "body-md": ["Inter", "sans-serif"],
-                        "label-caps": ["Inter", "sans-serif"]
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"]
                     },
                     "fontSize": {
                         "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
                         "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
                         "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
                         "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-                        "headline-sm": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "600" }],
                         "headline-md": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
                         "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
                     }
@@ -119,19 +112,8 @@
       </script>
       <style>
         body {
-          font-family: 'Inter', system-ui, -apple-system, sans-serif;
+          font-family: 'Inter', Arial, sans-serif;
         }
-        
-        /* Modern Startup Heading Font */
-        h1, h2, h3, h4, h5, h6, 
-        .font-heading,
-        .font-display-lg, 
-        .font-display-lg-mobile, 
-        .font-headline-md, 
-        .font-headline-sm {
-          font-family: 'Poppins', 'Inter', sans-serif !important;
-        }
-
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -170,20 +152,10 @@
           animation: fadeUp 0.9s ease-out both;
         }
 
-        /* =========================================
-           WHITE-BEZEL CURVED VIDEO FRAME (MOBILE & DESKTOP)
-           ========================================= */
-        .video-showcase-container {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
+        /* Exact White Bezel Video Frame */
         .custom-video-frame {
           position: relative;
           width: 100%;
-          max-width: 580px;
           aspect-ratio: 16 / 9;
           background: #ffffff;
           padding: 8px;
@@ -192,12 +164,6 @@
           box-shadow: 0 20px 48px -10px rgba(17, 24, 39, 0.22),
                       0 8px 18px -6px rgba(0, 0, 0, 0.1);
           overflow: hidden;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .custom-video-frame:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 25px 52px -10px rgba(17, 24, 39, 0.26);
         }
 
         .custom-video-frame video,
@@ -216,8 +182,6 @@
             border-radius: 26px;
             padding: 5px;
             border-width: 3px;
-            margin-top: 1rem;
-            box-shadow: 0 14px 30px -8px rgba(17, 24, 39, 0.22);
           }
           .custom-video-frame video,
           .custom-video-frame iframe {
@@ -432,11 +396,11 @@
                <span class="text-base font-semibold text-headline-sm font-bold text-primary dark:text-primary-fixed group-hover:opacity-80 transition-opacity">Data Specialist</span>
             </a>
             <nav class="hidden md:flex items-center gap-8">
-               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#services">Services</a>
-               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#about">About</a>
-               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#portfolio">Portfolio</a>
-               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#certifications">Certificates</a>
-               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-semibold" href="#testimonials">Testimonials</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-bold" href="#results">Results</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-bold" href="#about">About</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-bold" href="#portfolio">Portfolio</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-bold" href="#certifications">Certificates</a>
+               <a class="text-[#111827] hover:text-primary transition-colors duration-200 text-base font-bold" href="#testimonials">Testimonials</a>
             </nav>
             <div class="hidden md:flex items-center gap-4">
                <a class="px-3 py-1.5 text-primary font-body-md text-body-md font-semibold border border-primary rounded-lg hover:bg-surface-container-low transition-colors" href="#contact">Contact</a>
@@ -449,7 +413,7 @@
             </button>
          </div>
          <div class="hidden md:hidden bg-surface-container-lowest border-t border-outline-variant px-margin-mobile py-4 space-y-4" id="mobile-menu">
-            <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#services">Services</a>
+            <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#results">Results</a>
             <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#about">About</a>
             <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#portfolio">Portfolio</a>
             <a class="block text-on-surface-variant hover:text-primary font-body-md text-body-md py-2" href="#certifications">Certificates</a>
@@ -470,20 +434,20 @@
                   <div class="space-y-8 max-w-2xl">
                      <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low border border-outline-variant rounded-full">
                         <img src="./icon.jpg" alt="Service Icon" class="w-4 h-4 object-contain">
-                        <span class="font-label-caps text-label-caps text-on-surface-variant font-medium">Data Specialist Freelance Services</span>
+                        <span class="font-label-caps text-label-caps text-on-surface-variant">Data Specialist Freelance Services</span>
                      </div>
-                     <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface tracking-tight"><span class="text-primary">Hey, I am Affan</span>, Professional MS Office Specialist & Data Solutions Expert</h1>
+                     <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface"><span class="text-primary">Hey, I am Affan</span>, Professional MS Office Specialist & Data Solutions Expert</h1>
                      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                         I help small businesses, startups, and professionals clean Excel data, automate reports,
-                        create dashboards, and format Word/PowerPoint documents professionally.
+                        Create dashboards and format Word/PowerPoint documents professionally.
                         My focus is on saving your time, reducing manual errors, and delivering accurate business-ready files.
                         I am currently open to freelance, remote, internship, and contract opportunities.
                      </p>
                      <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a class="inline-flex justify-center items-center px-6 py-3 bg-primary text-on-primary text-body-lg font-semibold rounded-lg shadow-sm hover:bg-primary-container transition-colors duration-200" href="#contact">
+                        <a class="inline-flex justify-center items-center px-6 py-3 bg-primary text-on-primary font-headline-sm text-body-lg font-semibold rounded-lg shadow-sm hover:bg-primary-container transition-colors duration-200" href="#contact">
                            Get a Free Consultation
                         </a>
-                        <a class="inline-flex justify-center items-center px-6 py-3 bg-transparent text-primary text-body-lg font-semibold border border-primary rounded-lg hover:bg-primary-fixed/30 transition-colors duration-200" href="#contact">
+                        <a class="inline-flex justify-center items-center px-6 py-3 bg-transparent text-primary font-headline-sm text-body-lg font-semibold border border-primary rounded-lg hover:bg-primary-fixed/30 transition-colors duration-200" href="#contact">
                            Send Your File for Review
                         </a>
                      </div>
@@ -548,13 +512,7 @@
                   <div class="tool-card"><img src="https://img.icons8.com/color/96/google-calendar--v2.png" alt="Google Calendar"></div>
                   <div class="tool-card"><img src="https://img.icons8.com/color/96/google-drive--v2.png" alt="Google Drive"></div>
                   <div class="tool-card"><img src="https://img.icons8.com/color/96/google-docs.png" alt="Google Docs"></div>
-                  <div class="tool-card"><img src="https://img.icons8.com/color/96/google-meet.png" alt="Google Meet"></div>
-                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft.png" alt="Microsoft"></div>
-                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-word-2019--v2.png" alt="Word"></div>
                   <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel"></div>
-                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-powerpoint-2019.png" alt="PowerPoint"></div>
-                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-onenote-2019.png" alt="OneNote"></div>
-                  <div class="tool-card"><img src="https://img.icons8.com/color/96/microsoft-outlook-2019.png" alt="Outlook"></div>
                </div>
             </div>
          </section>
@@ -570,8 +528,6 @@
                   </p>
                </div>
                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-                  
-                  <!-- Left Side: Metrics Cards -->
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                      <div class="bg-white rounded-[22px] border border-outline-variant p-5 md:p-6 shadow-sm min-h-[150px] md:min-h-[165px] flex flex-col justify-center">
                         <h3 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">50+</h3>
@@ -607,9 +563,9 @@
                         </h3>
                      </div>
                   </div>
-                  
-                  <!-- Right Side: Exact Rounded White Bezel Video Frame -->
-                  <div class="video-showcase-container">
+
+                  <!-- Clean White-Bezel Video Frame -->
+                  <div class="w-full flex items-center justify-center">
                      <div class="custom-video-frame">
                         <video 
                            controls 
@@ -619,17 +575,8 @@
                            <source src="./your-work-video.mp4" type="video/mp4">
                            Your browser does not support the video tag.
                         </video>
-                        <!--
-                        <iframe 
-                           src="https://www.youtube-nocookie.com/embed/YOUR_ID_HERE?rel=0" 
-                           title="Work Walkthrough" 
-                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                           allowfullscreen>
-                        </iframe>
-                        -->
                      </div>
                   </div>
-
                </div>
             </div>
          </section>
@@ -649,7 +596,7 @@
                      <img src="./11B.png" alt="Sales Dashboard" class="w-full aspect-video object-cover block">
                      <div class="p-3">
                         <h3 class="font-headline-sm mb-2">Sales Dashboard</h3>
-                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg font-semibold">
+                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg">
                            View Sample
                         </a>
                      </div>
@@ -658,7 +605,7 @@
                      <img src="cw-pdf-to-excel-100928235-orig.webp" alt="Inventory Management" class="w-full aspect-video object-cover">
                      <div class="p-3">
                         <h3 class="font-headline-sm mb-2">Inventory Management</h3>
-                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg font-semibold">
+                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg">
                            View Sample
                         </a>
                      </div>
@@ -667,7 +614,7 @@
                      <img src="c.png" alt="KPI Dashboard" class="w-full aspect-video object-cover">
                      <div class="p-3">
                         <h3 class="font-headline-sm mb-2">KPI Performance Dashboard</h3>
-                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg font-semibold">
+                        <a href="https://drive.google.com/drive/folders/1lQEBTXov96CdYxiHJ3MEvIev64x5nqV7?usp=sharing" target="_blank" class="inline-block px-3 py-1.5 bg-primary text-on-primary rounded-lg">
                            View Sample
                         </a>
                      </div>
@@ -958,7 +905,6 @@
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Simple 5-10 Slide PowerPoint Design</span></li>
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>2-Day Delivery</span></li>
                      </ul>
-                     <!-- Basic Plan Link: https://rzp.io/rzp/aQQzUKC -->
                      <a href="https://rzp.io/rzp/aQQzUKC" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-4">
                         Buy Now
                      </a>
@@ -983,7 +929,6 @@
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Custom Pitch Decks & Branded Slides</span></li>
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>4-Day Delivery</span></li>
                      </ul>
-                     <!-- Standard Plan Link: https://rzp.io/rzp/dJSEPHY -->
                      <a href="https://rzp.io/rzp/dJSEPHY" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-4">
                         Get Started
                      </a>
@@ -996,7 +941,7 @@
                      <p class="text-on-surface-variant mb-5">Complete Business Reporting Setup</p>
                      <div class="mb-5">
                         <span class="text-4xl font-extrabold text-primary">$249</span>
-                        <span class="text-on-surface-variant font-semibold"> </span>
+                        <span class="text-on-surface-variant font-semibold"> / ₹19,999</span>
                      </div>
                      <ul class="space-y-4 mb-7 text-left">
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">+</span><span class="font-semibold">Everything in Standard</span></li>
@@ -1005,7 +950,6 @@
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Advanced PowerPoint Master Slides</span></li>
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>7-Day Delivery</span></li>
                      </ul>
-                     <!-- Premium Plan Link: https://rzp.io/rzp/3Yuyzup -->
                      <a href="https://rzp.io/rzp/3Yuyzup" target="_blank" class="block w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-4">
                         Get Started
                      </a>
@@ -1028,7 +972,6 @@
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Simple 5-10 Slide PowerPoint Design</span></li>
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>2-Day Delivery</span></li>
                      </ul>
-                     <!-- Basic Plan Link: https://rzp.io/rzp/aQQzUKC -->
                      <a href="https://rzp.io/rzp/aQQzUKC" target="_blank" class="w-full text-center bg-slate-700 text-white py-3 rounded-lg font-bold mb-4">
                         Buy Now
                      </a>
@@ -1053,7 +996,6 @@
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Custom Pitch Decks & Branded Slides</span></li>
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>4-Day Delivery</span></li>
                      </ul>
-                     <!-- Standard Plan Link: https://rzp.io/rzp/dJSEPHY -->
                      <a href="https://rzp.io/rzp/dJSEPHY" target="_blank" class="w-full text-center bg-primary text-white py-3 rounded-lg font-bold mb-4">
                         Get Started
                      </a>
@@ -1066,7 +1008,7 @@
                      <p class="text-on-surface-variant mb-6">Complete Business Reporting Setup</p>
                      <div class="mb-6">
                         <span class="text-4xl font-extrabold text-primary">$249</span>
-                        <span class="text-on-surface-variant font-semibold"> / ₹19,999</span>
+                        <span class="text-on-surface-variant font-semibold"> </span>
                      </div>
                      <ul class="space-y-4 mb-8 flex-grow text-left">
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">+</span><span class="font-semibold">Everything in Standard</span></li>
@@ -1075,7 +1017,6 @@
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">✓</span><span>Advanced PowerPoint Master Slides</span></li>
                         <li class="flex gap-3"><span class="text-primary font-bold shrink-0">⏱</span><span>7-Day Delivery</span></li>
                      </ul>
-                     <!-- Premium Plan Link: https://rzp.io/rzp/3Yuyzup -->
                      <a href="https://rzp.io/rzp/3Yuyzup" target="_blank" class="w-full text-center bg-slate-700 text-white py-3 rounded-lg font-bold mb-4">
                         Get Started
                      </a>
@@ -1098,16 +1039,16 @@
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                            <label class="block font-label-caps text-label-caps text-on-surface-variant" for="full-name">Full Name</label>
-                           <input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="full-name" name="full-name" placeholder="John Doe" type="text">
+                           <input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="full-name" name="full-name" placeholder="John Doe" type="text">
                         </div>
                         <div class="space-y-2">
                            <label class="block font-label-caps text-label-caps text-on-surface-variant" for="email">Business Email</label>
-                           <input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="email" name="email" placeholder="john@company.com" type="email">
+                           <input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="email" name="email" placeholder="john@company.com" type="email">
                         </div>
                      </div>
                      <div class="space-y-2">
                         <label class="block font-label-caps text-label-caps text-on-surface-variant" for="project-type">Project Type</label>
-                        <select class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-sans" id="project-type" name="project-type">
+                        <select class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="project-type" name="project-type">
                            <option>Excel Data Cleaning</option>
                            <option>Excel Dashboard</option>
                            <option>PDF to Excel / Word</option>
@@ -1118,9 +1059,9 @@
                      </div>
                      <div class="space-y-2">
                         <label class="block font-label-caps text-label-caps text-on-surface-variant" for="message">Message</label>
-                        <textarea class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all h-32 font-sans" id="message" name="message" placeholder="Tell me about your data challenges..."></textarea>
+                        <textarea class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all h-32" id="message" name="message" placeholder="Tell me about your data challenges..."></textarea>
                      </div>
-                     <button class="w-full py-4 bg-primary text-on-primary text-body-lg font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity" type="submit">
+                     <button class="w-full py-4 bg-primary text-on-primary font-headline-sm text-body-lg font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity" type="submit">
                         Send Message
                      </button>
                   </form>
@@ -1210,7 +1151,7 @@
                <div>
                   <h3 class="font-bold text-lg mb-4">Quick Links</h3>
                   <ul class="space-y-3 text-white/75 text-base">
-                     <li><a href="#services" class="hover:text-white">Services</a></li>
+                     <li><a href="#results" class="hover:text-white">Results</a></li>
                      <li><a href="#portfolio" class="hover:text-white">Portfolio</a></li>
                      <li><a href="#certifications" class="hover:text-white">Certificates</a></li>
                      <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
