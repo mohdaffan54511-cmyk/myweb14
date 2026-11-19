@@ -152,6 +152,41 @@
           animation: fadeUp 0.9s ease-out both;
         }
 
+        /* Modern Showcase Video Frame */
+        .showcase-video-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          min-height: 280px;
+          border-radius: 26px;
+          overflow: hidden;
+          background: #0f172a;
+          border: 3px solid #ffffff;
+          box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .showcase-video-element {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          border-radius: 23px;
+        }
+
+        @media (max-width: 1023px) {
+          .showcase-video-container {
+            aspect-ratio: 16 / 9;
+            min-height: auto;
+            border-radius: 20px;
+          }
+          .showcase-video-element {
+            border-radius: 17px;
+          }
+        }
+
         /* =========================================
            SINGLE-LINE GOOGLE + MICROSOFT TOOLS MARQUEE
            ========================================= */
@@ -532,15 +567,32 @@
                         </h3>
                      </div>
                   </div>
-                  <div class="bg-[#272b70] rounded-[26px] p-5 md:p-7 text-white relative overflow-hidden min-h-[340px] md:min-h-[380px] flex flex-col justify-between">
-                     <div class="max-w-xl">
-                        <h3 class="text-xl md:text-3xl font-bold leading-tight mb-3">
-                           Showcase your <span class="text-primary-fixed">best MS Office work</span> here
-                        </h3>
-                        <p class="text-white/80 text-sm md:text-base leading-relaxed"></p>
-                     </div>
-                     <div class="mt-6 overflow-hidden rounded-[28px]">
-                        <img id="autoWorkImage" src="./Work-1.jpg" alt="Work Sample" class="w-full h-[240px] sm:h-[320px] md:h-[420px] object-cover rounded-[28px] transition-opacity duration-1000 ease-in-out opacity-100">
+                  
+                  <!-- Responsive Curved Video Frame -->
+                  <div class="w-full flex items-center justify-center">
+                     <div class="showcase-video-container">
+                        <!-- HTML5 Video: replace 'your-work-video.mp4' with your actual video file -->
+                        <video 
+                           class="showcase-video-element" 
+                           controls 
+                           playsinline 
+                           preload="metadata" 
+                           poster="./Work-1.jpg">
+                           <source src="./your-work-video.mp4" type="video/mp4">
+                           Your browser does not support the video tag.
+                        </video>
+                        
+                        <!-- If you want to use YouTube or Loom Embed instead, uncomment below: -->
+                        <!--
+                        <iframe 
+                           class="showcase-video-element" 
+                           src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID?rel=0" 
+                           title="Work Sample Walkthrough" 
+                           frameborder="0" 
+                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                           allowfullscreen>
+                        </iframe>
+                        -->
                      </div>
                   </div>
                </div>
@@ -1191,33 +1243,6 @@
                }
              }
            });
-         }
-      </script>
-      <script>
-         const autoWorkImages = [
-           "./Work-1.jpg",
-           "./Work-2.jpg",
-           "./Work-3.jpg",
-         ];
-
-         let autoWorkIndex = 0;
-         const autoWorkImage = document.getElementById("autoWorkImage");
-
-         autoWorkImages.forEach(function(src) {
-           const img = new Image();
-           img.src = src;
-         });
-
-         if (autoWorkImage) {
-           setInterval(function () {
-             autoWorkImage.style.opacity = "0";
-
-             setTimeout(function () {
-               autoWorkIndex = (autoWorkIndex + 1) % autoWorkImages.length;
-               autoWorkImage.src = autoWorkImages[autoWorkIndex];
-               autoWorkImage.style.opacity = "1";
-             }, 1000);
-           }, 2000);
          }
       </script>
    </body>
